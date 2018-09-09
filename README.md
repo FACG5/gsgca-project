@@ -59,7 +59,7 @@
  ---------------------------
  
  ### Database Schema
- ![DB_SCHEMA](https://image.ibb.co/dej45U/Screenshot_from_2018_09_09_15_40_55.png)
+ ![DB_SCHEMA](https://files.gitter.im/ela-team/ela-team/f85T/download.png)
 
 
 ### how to run the tests
