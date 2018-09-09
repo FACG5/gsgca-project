@@ -2,19 +2,19 @@
 
  ---------------------------
 
-# Description of app
+### Description of app
 
 
  ---------------------------
-# problem statement!!
+### problem statement!!
 
  ---------------------------
  
- # user stories
+ ### user stories
  
  
  --------------------------- 
- # how to run the Server
+ ### how to run the Server
 - Clone this repository
 - Run ```npm install```
 - Create a ```config.env``` file
@@ -23,7 +23,7 @@
 
  ---------------------------
 
-# how to run the tests
+### how to run the tests
 - Run ```npm install```
 - run ```npm test``` to run tests
 
@@ -31,12 +31,12 @@
 Link Of Prototype [Here ](https://www.figma.com/file/WcTCOrg1dclA9NFxxazJwm/GSG-Cohorts-and-Projects-Copy?node-id=0%3A1)
 
  ---------------------------
-# Tech stack
--expressjs
--postgresSql
--html5
--Css3
--js
+### Tech stack
+- expressjs
+- postgresSql
+- html5
+- Css3
+- js
 
 ### Team
 - Ali
