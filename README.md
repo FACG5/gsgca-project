@@ -14,6 +14,7 @@
  
  
  --------------------------- 
+ 
  ### how to run the Server
 - Clone this repository
 - Run ```npm install```
@@ -22,6 +23,10 @@
 - run ```npm run start``` to run the project
 
  ---------------------------
+ 
+ ### Database Schema
+ ![DB_SCHEMA](https://image.ibb.co/dej45U/Screenshot_from_2018_09_09_15_40_55.png)
+
 
 ### how to run the tests
 - Run ```npm install```
