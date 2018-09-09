@@ -1,12 +1,16 @@
-# gsgca-project
+# Gaza Sky Geeks Code Academy Page
 
  ---------------------------
+### Problem Statement
 
-### Description of app
+* Lack of place where to find the projects which student developed during the time in the academy.
+* Lack of place where to view the past cohorts and students.
 
+which affect the promotion of student projects during the time spent in the code academy.
 
- ---------------------------
-### problem statement!!
+#### Our Solution 
+
+* Create a website for the code academy that inclue view/add/delete/update (CRUD) of the cohorts/projects/students.
 
  ---------------------------
  
@@ -46,10 +50,9 @@
 * I want to view summary about the project.
 * I want to view project information.
 
- 
  --------------------------- 
  
- ### how to run the Server
+### How to run website locally 
 - Clone this repository
 - Run ```npm install```
 - Create a ```config.env``` file
@@ -59,23 +62,23 @@
  ---------------------------
  
  ### Database Schema
- ![DB_SCHEMA](https://files.gitter.im/ela-team/ela-team/4yeA/Screenshot-from-2018-09-09-16-04-27.png)
+ ![DB_SCHEMA](https://files.gitter.im/ela-team/ela-team/5ndh/Screenshot-from-2018-09-09-16-24-33.png)
 
 
-### how to run the tests
+### How to run tests
 - Run ```npm install```
 - run ```npm test``` to run tests
 
  ---------------------------
-Link Of Prototype [Here ](https://www.figma.com/file/WcTCOrg1dclA9NFxxazJwm/GSG-Cohorts-and-Projects-Copy?node-id=0%3A1)
+Link Of Prototype [Here ](https://www.figma.com/file/rS4dot3Dg3UnI4gJW6PS7o/GSG-Cohorts-%26-Projects?node-id=0%3A1)
 
  ---------------------------
 ### Tech stack
-- expressjs
-- postgresSql
-- html5
-- Css3
-- js
+- Express.js
+- PostgreSQL
+- HTML5
+- CSS3
+- Javascript
 
 ### Team
 - Ali
