@@ -62,7 +62,7 @@ which affect the promotion of student projects during the time spent in the code
  ---------------------------
  
  ### Database Schema
- ![DB_SCHEMA](https://files.gitter.im/ela-team/ela-team/5ndh/Screenshot-from-2018-09-09-16-24-33.png)
+ ![DB_SCHEMA](https://files.gitter.im/ela-team/ela-team/YNZF/Screenshot-from-2018-09-13-14-11-09.png)
 
 
 ### How to run tests
@@ -70,7 +70,7 @@ which affect the promotion of student projects during the time spent in the code
 - run ```npm test``` to run tests
 
  ---------------------------
-Link Of Prototype [Here ](https://files.gitter.im/ela-team/ela-team/YNZF/Screenshot-from-2018-09-13-14-11-09.png)
+Link Of Prototype [Here ](https://www.figma.com/file/rS4dot3Dg3UnI4gJW6PS7o/GSG-Cohorts-%26-Projects?node-id=0%3A1)
 
  ---------------------------
 ### Tech stack
