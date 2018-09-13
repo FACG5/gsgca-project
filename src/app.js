@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-// const controllers = require('./controllers/index');
 
 const app = express();
 app.use(bodyParser.json());
@@ -21,6 +20,5 @@ app.engine(
 
 app.set('port', process.env.PORT || 7000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
-// app.use(controllers);
 
 module.exports = app;
