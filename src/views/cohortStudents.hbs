@@ -1,0 +1,51 @@
+<section class="content">
+  <section class="sectionstd" id="student">
+    <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
+    <hr> {{#if err}}
+    <h3>{{err}}</h3>
+    {{else}}
+    <h3>Students of {{cohortname}}</h3>
+    <table class="tabel">
+      <tr>
+        <th>Name</th>
+        <th>Github Link</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each res}}
+      <tr>
+        <td>{{name}}</td>
+        <td><a href="{{githublink}}">Click</a></td>
+        <td><a href="{{imgurl}}">Click</a></td>
+        <td>
+          <a class="edit" href="javascript:;">
+            Edit </a>
+        </td>
+        <td>
+          <a class="delete" id="{{id}}">
+            Delete </a>
+        </td>
+
+      </tr>
+      {{/each}}
+
+    </table>
+
+    {{/if}}
+
+  </section>
+
+  <section class="sectionAddstd" id="addStd">
+    <h2>Add Student</h2>
+
+    <label for="name"> Name</label>
+    <input type="text" id="studentName" name="name" placeholder="Name" required>
+    <label for="link">Github Link</label>
+    <input type="text" id="gitHubUserName" name="link" placeholder="Github Username">
+    <input type="submit" value="Add Student" id="addStudentButton">
+    <img class="loading" id="loading" src="/img/loading.gif" alt="">
+
+  </section>
+</section>
+</section>

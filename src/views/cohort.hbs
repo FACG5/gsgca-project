@@ -1,0 +1,60 @@
+<section class="content">
+  <section>
+    {{#if err}}
+    <h3>{{err}}</h3>
+    {{else}}
+
+    <table class="tabel">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>GithubPage</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View student</th>
+
+      </tr>
+      {{#each res}}
+      <tr id='{{id}}'>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td><a href="{{githublink}}">click</a></td>
+        <td><a href="{{imgurl}}">click</a></td>
+        <td>
+          <a>
+            Edit </a>
+        </td>
+        <td>
+          <a>
+            Delete </a>
+        </td>
+        <td>
+          <a href="/admin/cohorts/{{id}}/students">
+            View student </a>
+        </td>
+      </tr>
+
+      {{/each}}
+    </table>
+
+    {{/if}}
+
+
+
+  </section>
+  <section class="sectionAddcoh" id="addCoh">
+    <h2>Add Cohort</h2>
+    <div class="cohDiv">
+
+      <label for="name"> Name</label>
+      <input type="text" id="name" name="name" placeholder="Name">
+      <label for="Description"> Description</label>
+      <input type="text" id="Description" name="Description" placeholder="Description">
+      <label for="link">Github Link</label>
+      <input type="text" id="link" name="link" placeholder="Github Link">
+      <label for="/img"> /img</label>
+      <input type="text" id="/img" name="/img" placeholder=" Link /img">
+      <input type="submit" value="ADD Cohort">
+    </div>
+  </section>
