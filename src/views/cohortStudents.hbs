@@ -2,8 +2,8 @@
   <section class="sectionstd" id="student">
     <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
     <hr> 
-      {{#if err}}
-    <h3>{{err}}</h3>
+    {{#if err}}
+      <h3>{{err}}</h3>
     {{else}}
     <h3>Students of {{cohortname}}</h3>
     <table class="tabel">
@@ -27,16 +27,11 @@
           <a class="delete" id="{{id}}">
             Delete </a>
         </td>
-
       </tr>
       {{/each}}
-
     </table>
-
     {{/if}}
-
   </section>
-
   <section class="sectionAddstd" id="addStd">
     <h2>Add Student</h2>
 
@@ -47,5 +42,4 @@
     <input type="submit" value="Add Student" id="addStudentButton">
     <img class="loading" id="loading" src="/img/loading.gif" alt="">
   </section>
-</section>
 </section>

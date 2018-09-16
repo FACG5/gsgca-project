@@ -1,9 +1,8 @@
 <section class="content">
   <section>
     {{#if err}}
-      <h3>{{err}}</h3>
+    <h3>{{err}}</h3>
     {{else}}
-
     <table class="tabel">
       <tr>
         <th>Name</th>
@@ -13,7 +12,6 @@
         <th>Edit</th>
         <th>Delete</th>
         <th>View student</th>
-
       </tr>
       {{#each res}}
       <tr id='{{id}}'>
@@ -34,19 +32,13 @@
             View student </a>
         </td>
       </tr>
-
       {{/each}}
-    </table>
-
+      </table>
     {{/if}}
-
-
-
   </section>
   <section class="sectionAddcoh" id="addCoh">
     <h2>Add Cohort</h2>
     <div class="cohDiv">
-
       <label for="name"> Name</label>
       <input type="text" id="name" name="name" placeholder="Name">
       <label for="Description"> Description</label>
