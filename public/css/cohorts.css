@@ -1,6 +1,7 @@
 .styled {
   margin-right: 1rem;
 }
+
 select.styled,
 select.styled option {
   -webkit-appearance: none;
@@ -38,6 +39,7 @@ select.styled:not([multiple="multiple"]) {
   background-size: 5px 5px, 5px 5px, 30px 100%;
   background-repeat: no-repeat;
 }
+
 .button {
   background-color: #4caf50;
   border: none;
@@ -52,6 +54,7 @@ select.styled:not([multiple="multiple"]) {
   cursor: pointer;
   font-weight: bold;
 }
+
 .button2 {
   background-color: #389dbf;
 }
@@ -59,8 +62,8 @@ select.styled:not([multiple="multiple"]) {
 .tabel {
   border-collapse: collapse;
   width: 100%;
-  margin-top: 2%;
-  margin-bottom: 3%;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .tabel td,
@@ -85,23 +88,29 @@ select.styled:not([multiple="multiple"]) {
   background-color: #389dbf;
   color: white;
 }
+
 .sectionAddcoh {
   display: none;
 }
+
 .sectionAddcoh--visible {
   display: block;
   margin-bottom: 4rem;
 }
+
 .sectionstd--visible {
   display: block;
   margin-bottom: 7%;
 }
+
 .buttonstd {
   margin-top: 1%;
 }
+
 h2 {
   margin-bottom: 5%;
 }
+
 input[type="text"] {
   padding: 12px 20px;
   display: inline-block;
@@ -110,6 +119,7 @@ input[type="text"] {
   box-sizing: border-box;
   margin-bottom: 2%;
 }
+
 input[type="submit"] {
   margin-top: 1rem;
   background-color: #4caf50;
@@ -119,23 +129,29 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
+
+
 .loading {
   display: none;
   margin: 0 auto;
   width: 50px;
   height: 50px;
 }
+
 .delete {
   cursor: pointer;
   color: red;
 }
+
 input[type="submit"]:hover {
   background-color: #45a049;
 }
 
+
 .sectionAddstd {
   display: none;
 }
+
 .sectionAddstd--visible {
   margin-top: 2%;
   display: block;
@@ -148,3 +164,4 @@ input[type="submit"]:hover {
   grid-template-columns: 1fr 4fr;
   width: 80%;
 }
+
