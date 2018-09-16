@@ -9,15 +9,12 @@
 
     {{>adminHeader}}
     <main class="wrapper">
-        {{>adminSidebar}} 
-        {{{body}}}
+        {{>adminSidebar}} {{{body}}}
 
     </main>
-    {{>adminFooter}} 
-    {{#if jsFile}}
-    <script src="/js/{{jsFile}}.js"></script>
-     {{/if}}
-    <script src="/js/adminHome.js"></script>
+    {{>adminFooter}} {{#if jsFile}}
+    <script src="/js/{{jsFile}}.js"></script> {{/if}}
+    <script src="/js/admin.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
