@@ -1,8 +1,9 @@
 <section class="content">
   <section class="sectionstd" id="student">
     <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
-    <hr> {{#if err}}
-    <h3>{{err}}</h3>
+    <hr>
+    {{#if err}}
+      <h3>{{err}}</h3>
     {{else}}
     <h3>Students of {{cohortname}}</h3>
     <table class="tabel">
@@ -13,7 +14,7 @@
         <th>Edit</th>
         <th>Delete</th>
       </tr>
-      {{#each res}}
+        {{#each res}}
       <tr>
         <td>{{name}}</td>
         <td><a href="{{githublink}}">Click</a></td>

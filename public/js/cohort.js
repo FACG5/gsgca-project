@@ -1,8 +1,6 @@
 const addStd = document.getElementById('addStd');
 const addCoh = document.getElementById('addCoh');
 
-function addCohort() {
+const addCohort = () => {
   addCoh.classList.toggle('sectionAddcoh--visible');
 }
-
-// .then(result => console.log(result.header));
