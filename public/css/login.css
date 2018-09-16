@@ -6,7 +6,7 @@
 body {
   font-family: Roboto;
   background-color: #364150;
-  padding: 5%;
+  padding: 3rem;
 }
 .header {
   display: flex;
