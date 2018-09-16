@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{>adminHead}}
+</head>
+
+<body>
+
+    {{>adminHeader}}
+    <main class="wrapper">
+        {{>adminSidebar}} 
+        {{{body}}}
+
+    </main>
+    {{>adminFooter}} 
+    {{#if jsFile}}
+    <script src="/js/{{jsFile}}.js"></script>
+     {{/if}}
+    <script src="/js/adminHome.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</body>
+
+</html>
