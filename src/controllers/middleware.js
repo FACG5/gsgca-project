@@ -1,5 +1,6 @@
 const { parse } = require('cookie');
 const { verify } = require('jsonwebtoken');
+
 require('env2')('./config.env');
 
 exports.authCheck = (request, response, next) => {
