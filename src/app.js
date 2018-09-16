@@ -3,7 +3,7 @@ const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const controllers = require('./controllers/index');
+const controllers = require('./controllers');
 
 const app = express();
 app.use(bodyParser.json());

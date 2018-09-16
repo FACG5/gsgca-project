@@ -34,26 +34,26 @@ body {
   font-weight: 400 !important;
 }
 .contentlogin input {
-    font-family: Roboto;
+  font-family: Roboto;
 
-    border: none;
-    background-color: #dde3ec;
-    height: 43px;
-    color: #8290a3;
-    margin: 15px 15px 15px 0px;
-    width: 23rem;
-    padding-left: 2%;
-    border: 1px solid #dde3ec;
+  border: none;
+  background-color: #dde3ec;
+  height: 43px;
+  color: #8290a3;
+  margin: 15px 15px 15px 0px;
+  width: 23rem;
+  padding-left: 2%;
+  border: 1px solid #dde3ec;
 }
-.button{
-    font-family: Roboto;
-text-transform: uppercase;
-    margin-top: 3%;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #3b9c96;
-    outline:none;
+.button {
+  font-family: Roboto;
+  text-transform: uppercase;
+  margin-top: 3%;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #3b9c96;
+  outline: none;
 }
-.button:hover{
-    background-color: #12857d;
+.button:hover {
+  background-color: #12857d;
 }
