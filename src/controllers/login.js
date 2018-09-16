@@ -3,7 +3,7 @@ const { sign } = require('jsonwebtoken');
 const loginQuery = require('../database/queries/login');
 
 exports.get = (request, response) => {
-  response.render('login', { layout: 'login',style: 'login', js: 'login' });
+  response.render('login', { layout: 'login', style: 'login', js: 'login' });
 };
 
 exports.post = (request, response) => {
