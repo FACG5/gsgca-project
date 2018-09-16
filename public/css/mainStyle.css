@@ -81,6 +81,7 @@ ul {
   grid-template-areas: "sidebar content content content";
   background-color: #fff;
   color: #444;
+  margin-bottom: 50px;
 }
 
 .footer {
