@@ -6,11 +6,11 @@
 body {
   font-family: Roboto;
   background-color: #364150;
+  padding: 5%;
 }
 .header {
   display: flex;
   justify-content: center;
-  margin-top: 3%;
 }
 .contentlogin {
   background-color: #eceef1;
