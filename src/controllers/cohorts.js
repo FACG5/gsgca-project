@@ -1,5 +1,7 @@
 const getCohortStudentsQuery = require('../database/queries/getCohortStudents');
 const getCohortsQuery = require('../database/queries/getCohorts');
+const { addCohorts } = require('../database/queries/addCohort');
+
 
 exports.get = (request, response) => {
   getCohortsQuery((err, res) => {
@@ -44,4 +46,20 @@ exports.getStudents = (request, response) => {
       layout: 'adminLayout',
     });
   });
+};
+
+exports.addCohort = (req, response, next) => {
+  const data = req.body;
+  const {
+    name, description, githublink, imgURl,
+  } = data;
+  addCohorts(name, description, githublink, imgURl)
+    .then((results) => {
+      response.render('cohort', {
+        title: 'Cohort', style: ['main', 'cohort'], js: ['main', 'cohort', 'delCohort'], results,
+      });
+    })
+    .catch((err) => {
+      next(err);
+    });
 };

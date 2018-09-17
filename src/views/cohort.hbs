@@ -1,4 +1,5 @@
 <section class="content">
+  <button class="button button2" onclick="addCohort()">ADD Cohort</button>
   <section>
     {{#if err}}
     <h3>{{err}}</h3>
@@ -17,8 +18,12 @@
       <tr id='{{id}}'>
         <td>{{name}}</td>
         <td>{{description}}</td>
-        <td><a href="{{githublink}}">click</a></td>
-        <td><a href="{{imgurl}}">click</a></td>
+        <td>
+          <a href="{{githublink}}">click</a>
+        </td>
+        <td>
+          <a href="{{imgurl}}">click</a>
+        </td>
         <td>
           <a>
             Edit </a>
@@ -33,20 +38,32 @@
         </td>
       </tr>
       {{/each}}
-      </table>
+    </table>
     {{/if}}
   </section>
   <section class="sectionAddcoh" id="addCoh">
     <h2>Add Cohort</h2>
     <div class="cohDiv">
       <label for="name"> Name</label>
-      <input type="text" id="name" name="name" placeholder="Name">
+      <div>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <p id="nameerror" class="errorValid"></p>
+      </div>
       <label for="Description"> Description</label>
-      <input type="text" id="Description" name="Description" placeholder="Description">
+      <div>
+        <input type="text" id="description" name="Description" placeholder="Description" required>
+        <p id="deserror" class="errorValid"></p>
+      </div>
       <label for="link">Github Link</label>
-      <input type="text" id="link" name="link" placeholder="Github Link">
-      <label for="/img"> /img</label>
-      <input type="text" id="/img" name="/img" placeholder=" Link /img">
-      <input type="submit" value="ADD Cohort">
+      <div>
+        <input type="text" id="githublink" name="link" placeholder="Github Link" required>
+        <p id="giterror" class="errorValid"></p>
+      </div>
+      <label for="Image"> Image</label>
+      <div>
+        <input type="text" id="imgURl" name="Image" placeholder=" Link Image" required>
+        <p id="imgerror" class="errorValid"></p>
+      </div>
+      <input type="submit" id="addCohort" value="ADD Cohort">
     </div>
   </section>
