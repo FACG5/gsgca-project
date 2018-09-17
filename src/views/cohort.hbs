@@ -2,7 +2,7 @@
   <button class="button button2" onclick="addCohort()">ADD Cohort</button>
   <section>
     {{#if err}}
-    <h3>{{err}}</h3>
+     <h3>{{err}}</h3>
     {{else}}
     <table class="tabel">
       <tr>
@@ -29,7 +29,7 @@
             Edit </a>
         </td>
         <td>
-          <a>
+          <a class="delete" id="{{this.id}}">
             Delete </a>
         </td>
         <td>
