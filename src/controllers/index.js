@@ -4,7 +4,7 @@ const login = require('./login');
 const error = require('./error');
 const adminHomePage = require('./adminHomePage');
 const cohorts = require('./cohorts');
-const editcohort = require('./editcohort');
+const editcohort = require('./editCohort');
 const students = require('./Students');
 const { authCheck } = require('./middleware');
 
