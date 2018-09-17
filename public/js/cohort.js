@@ -17,17 +17,16 @@ const displayErr = (errElem, errMsg) => {
   errElem.textContent = errMsg;
 };
 
-const checkNam = () => {
-  if (names.value === '') {
+const checkName = () => {
+  if (!names.value) {
     displayErr(nameerror, 'name Cohort is required');
   } else {
     displayErr(nameerror, '');
-    return true;
-  }
+    return true;  }
 };
 
-const checkdes = () => {
-  if (descriptions.value === '') {
+const checkDescriptions = () => {
+  if (!descriptions.value) {
     displayErr(deserror, 'Description Cohort is required');
   } else {
     displayErr(deserror, '');
@@ -35,8 +34,8 @@ const checkdes = () => {
   }
 };
 
-const checkgit = () => {
-  if (githublinks.value === '') {
+const checkGithublink = () => {
+  if (!githublinks.value) {
     displayErr(giterror, 'Github Link Cohort is required');
   } else {
     displayErr(giterror, '');
@@ -44,8 +43,8 @@ const checkgit = () => {
   }
 };
 
-const checkimg = () => {
-  if (imgURls.value === '') {
+const checkImage = () => {
+  if (!imgURls.value) {
     displayErr(imgerror, 'Image Cohort is required');
   } else {
     displayErr(imgerror, '');
@@ -53,13 +52,13 @@ const checkimg = () => {
   }
 };
 
-names.addEventListener('focusout', checkNam);
-descriptions.addEventListener('focusout', checkdes);
-githublinks.addEventListener('focusout', checkgit);
-imgURls.addEventListener('focusout', checkimg);
+names.addEventListener('focusout', checkName);
+descriptions.addEventListener('focusout', checkDescriptions);
+githublinks.addEventListener('focusout', checkGithublink);
+imgURls.addEventListener('focusout', checkImage);
 
 addCohorts.addEventListener('click', (e) => {
-  if (checkNam() && checkdes() && checkgit() && checkimg()) {
+  if (checkName() && checkDescriptions() && checkGithublink() && checkImage()) {
     const name = names.value;
     const description = descriptions.value;
     const githublink = githublinks.value;
