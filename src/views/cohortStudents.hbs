@@ -1,6 +1,6 @@
 <section class="content">
   <section class="sectionstd" id="student">
-    <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
+    <button class="button button2 buttonstd" onclick="showAddStudentDiv()">ADD Student</button>
     <hr> 
     {{#if err}}
       <h3>{{err}}</h3>
@@ -9,6 +9,7 @@
     <table class="tabel">
       <tr>
         <th>Name</th>
+        <th>Github Username</th>
         <th>Github Link</th>
         <th>Image</th>
         <th>Edit</th>
@@ -17,6 +18,7 @@
       {{#each res}}
       <tr>
         <td>{{name}}</td>
+        <td>{{username}}</td>
         <td><a href="{{githublink}}">Click</a></td>
         <td><a href="{{imgurl}}">Click</a></td>
         <td>
@@ -37,7 +39,7 @@
 
     <label for="name"> Name</label>
     <input type="text" id="studentName" name="name" placeholder="Name" required>
-    <label for="link">Github Link</label>
+    <label for="link">https://github.com/</label>
     <input type="text" id="gitHubUserName" name="link" placeholder="Github Username">
     <input type="submit" value="Add Student" id="addStudentButton">
     <img class="loading" id="loading" src="/img/loading.gif" alt="">
