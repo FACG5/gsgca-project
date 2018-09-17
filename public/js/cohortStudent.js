@@ -6,6 +6,7 @@ const loading = document.getElementById('loading');
 const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortID = splitUrl[splitUrl.length - 2];
+const deleteStudentButton = document.querySelectorAll('.delete');
 
 const showAddStudentDiv = () => {
   addStd.classList.toggle('sectionAddstd--visible');
@@ -61,4 +62,35 @@ addStudentButton.addEventListener('click', (e) => {
   } else {
     swal('Please Enter Data ! ! ', '', 'error');
   }
+});
+
+deleteStudentButton.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault();
+    swal({ 
+      title: 'Are you sure ?',
+      text: 'Once deleted, you will not be able to recover this imaginary file!',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          const deleteStudentData = { stdId: element.id, cohortID };
+          fetch(`/admin/cohorts/${cohortID}/deleteStudent`, {
+            method: 'DELETE',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(deleteStudentData),
+          }).then(result => result.json())
+            .then((result) => {
+              if (result.err) return swal('Error', '', 'error');
+              return swal(result.message, {
+                icon: 'success',
+              }).then((value) => { window.location = `/admin/cohorts/${cohortID}/students`; });
+            });
+        } else {
+          swal('Student is safe !');
+        }
+      });
+  });
 });
