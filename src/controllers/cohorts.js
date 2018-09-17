@@ -20,21 +20,21 @@ exports.get = (request, response) => {
       styleFile: 'cohorts',
       jsFile,
       layout: 'adminLayout',
+      title: 'Admin Panel : Cohorts',
     });
   });
 };
 
 exports.getStudents = (request, response) => {
   const { cohortId } = request.params;
-  console.log(request.params);
-  
   getCohortStudentsQuery(cohortId, (err, res) => {
     if (err) {
       return response.render('cohortStudents', {
         err: 'cannot get cohort Students !',
         styleFile: 'cohorts',
         jsFile,
-        layout: 'main',
+        layout: 'adminLayout',
+        title: 'Admin Panel : Students',
       });
     }
 
@@ -44,6 +44,7 @@ exports.getStudents = (request, response) => {
         styleFile: 'cohorts',
         jsFile: ['cohortStudent'],
         layout: 'adminLayout',
+        title: 'Admin Panel : Students',
       });
     }
 
@@ -53,6 +54,7 @@ exports.getStudents = (request, response) => {
       styleFile: 'cohorts',
       jsFile: ['cohortStudent'],
       layout: 'adminLayout',
+      title: 'Admin Panel : Students',
     });
   });
 };
