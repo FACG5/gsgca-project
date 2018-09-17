@@ -12,6 +12,7 @@ const showAddStudentDiv = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
 
+
 addStudentButton.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -65,33 +66,10 @@ addStudentButton.addEventListener('click', (e) => {
   }
 });
 
-deleteStudentButton.forEach((element) => {
-  element.addEventListener('click', (e) => {
-    e.preventDefault();
-    swal({ 
-      title: 'Are you sure ?',
-      text: 'Once deleted, you will not be able to recover this imaginary file!',
-      icon: 'warning',
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          const deleteStudentData = { stdId: element.id, cohortID };
-          fetch(`/admin/cohorts/${cohortID}/deleteStudent`, {
-            method: 'DELETE',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(deleteStudentData),
-          }).then(result => result.json())
-            .then((result) => {
-              if (result.err) return swal('Error', '', 'error');
-              return swal(result.message, {
-                icon: 'success',
-              }).then((value) => { window.location = `/admin/cohorts/${cohortID}/students`; });
-            });
-        } else {
-          swal('Student is safe !');
-        }
-      });
-  });
+deleteStudentButton.forEach((button) => {
+  const deleteStudentData = { stdId: button.id, cohortID };
+
+  const route = `/admin/cohorts/${cohortID}/deleteStudent`;
+  const routeToRedirect = `/admin/cohorts/${cohortID}/students`;
+deleteButtonFunction(button, route, routeToRedirect, deleteStudentData);
 });

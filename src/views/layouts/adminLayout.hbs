@@ -12,12 +12,10 @@
 
     </main>
     {{>adminFooter}}
-    {{#if jsFile}}
-      {{#each jsFile}}
-        <script src="/js/{{this}}.js"></script>
-     {{/each}}   
-    {{/if}}
     <script src="/js/admin.js"></script>
+    {{#if jsFile}}
+        <script src="/js/{{jsFile}}.js"></script>
+    {{/if}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
