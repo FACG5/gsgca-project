@@ -2,8 +2,6 @@
 const { getCohortdata } = require('../database/queries/getCohort');
 const { editCohorts } = require('../database/queries/editCohorts');
 
-const jsFile = ['cohort', 'delCohort'];
-
 exports.getCohortData = (req, response, next) => {
   const { id } = req.params;
   getCohortdata(id)
