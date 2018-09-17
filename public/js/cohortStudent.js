@@ -6,9 +6,8 @@ const loading = document.getElementById('loading');
 const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortID = splitUrl[splitUrl.length - 2];
-const deleteStudentButton = document.querySelectorAll('.delete');
 
-const addStudents = () => {
+const showAddStudentDiv = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
 
@@ -18,8 +17,8 @@ addStudentButton.addEventListener('click', (e) => {
   const studentNameValue = studentName.value;
   const gitHubUserNameValue = gitHubUserName.value;
   if (
-    studentNameValue.trim().length !== 0 
-    && gitHubUserNameValue.trim().length !== 0
+    studentNameValue.trim() !== 0
+    && gitHubUserNameValue.trim() !== 0
   ) {
     const apiLink = `https://api.github.com/users/${gitHubUserNameValue}`;
     fetch(apiLink, { method: 'GET' })
@@ -30,12 +29,12 @@ addStudentButton.addEventListener('click', (e) => {
         return response.json();
       })
       .then((response) => {
-        const { avatar_url, html_url } = response;
+        const { avatar_url: avatarUrl, html_url: htmlUrl } = response;
         const newStudent = {
           name: studentNameValue,
           username: gitHubUserNameValue,
-          avatar_url,
-          html_url,
+          htmlUrl,
+          avatarUrl,
           cohortID,
         };
         fetch(`/admin/cohorts/${cohortID}/newStudent`, {
