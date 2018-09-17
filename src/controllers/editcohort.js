@@ -1,6 +1,6 @@
 
 const { getCohortdata } = require('../database/queries/getCohort');
-const { editCohorts } = require('../database/queries/editcohort');
+const { editCohorts } = require('../database/queries/editCohorts');
 
 const jsFile = ['cohort', 'delCohort'];
 
@@ -19,15 +19,9 @@ exports.getCohortData = (req, response, next) => {
 
 exports.editCohort = (req, response, next) => {
   const data = req.body;
-  const cohortID = JSON.parse(req.params.id);
-  const {
-    name, description, githublink, imgURl,
-  } = data;
-  editCohorts(name, description, githublink, imgURl, cohortID)
+  editCohorts(data)
     .then((results) => {
-      response.render('cohort', {
-        title: 'Cohort', styleFile: 'cohorts', jsFile, layout: 'adminLayout', results,
-      });
+      response.send(JSON.stringify({ err: null, message: 'Edit Successfully!' }));
     })
     .catch((err) => {
       next(err);

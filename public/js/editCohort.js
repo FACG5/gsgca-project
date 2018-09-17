@@ -1,12 +1,12 @@
 const editCohort = document.getElementById('editCohort');
 const names = document.getElementById('name');
 const descriptions = document.getElementById('description');
-const githublinks = document.getElementById('githublink');
+const githubLinks = document.getElementById('githublink');
 const imgURls = document.getElementById('imgURl');
-const nameerror = document.getElementById('nameerror');
-const deserror = document.getElementById('deserror');
-const giterror = document.getElementById('giterror');
-const imgerror = document.getElementById('imgerror');
+const nameError = document.getElementById('nameerror');
+const descriptionsError = document.getElementById('deserror');
+const githubError = document.getElementById('giterror');
+const imgError = document.getElementById('imgerror');
 
 const displayErr = (errElem, errMsg) => {
   errElem.textContent = errMsg;
@@ -14,67 +14,66 @@ const displayErr = (errElem, errMsg) => {
 
 const checkName = () => {
   if (!names.value) {
-    displayErr(nameerror, 'name Cohort is required');
+    displayErr(nameError, 'name Cohort is required');
   } else {
-    displayErr(nameerror, '');
+    displayErr(nameError, '');
     return true;
   }
 };
 
 const checkDescriptions = () => {
   if (!descriptions.value) {
-    displayErr(deserror, 'Description Cohort is required');
+    displayErr(descriptionsError, 'Description Cohort is required');
   } else {
-    displayErr(deserror, '');
+    displayErr(descriptionsError, '');
     return true;
   }
 };
 
 const checkGithublink = () => {
-  if (!githublinks.value) {
-    displayErr(giterror, 'Github Link Cohort is required');
+  if (!githubLinks.value) {
+    displayErr(githubError, 'Github Link Cohort is required');
   } else {
-    displayErr(giterror, '');
+    displayErr(githubError, '');
     return true;
   }
 };
 
 const checkImage = () => {
   if (!imgURls.value) {
-    displayErr(imgerror, 'Image Cohort is required');
+    displayErr(imgError, 'Image Cohort is required');
   } else {
-    displayErr(imgerror, '');
+    displayErr(imgError, '');
     return true;
   }
 };
 
 names.addEventListener('focusout', checkName);
 descriptions.addEventListener('focusout', checkDescriptions);
-githublinks.addEventListener('focusout', checkGithublink);
+githubLinks.addEventListener('focusout', checkGithublink);
 imgURls.addEventListener('focusout', checkImage);
 
-editCohort.addEventListener('click', (e) => {
+editCohort.addEventListener('click', () => {
   if (checkName() && checkDescriptions() && checkGithublink() && checkImage()) {
     const URL = window.location.href;
     const splitUrl = URL.split('/');
-    const ID = splitUrl[splitUrl.length - 1];
+    const cohortId = splitUrl[splitUrl.length - 1];
     const name = names.value;
     const description = descriptions.value;
-    const githublink = githublinks.value;
-    const imgURl = imgURls.value;
-    const cohortID = JSON.parse(ID);
+    const githublink = githubLinks.value;
+    const imgUrl = imgURls.value;
     const data = {
-      name, description, githublink, imgURl,
+      name, description, githublink, imgUrl, cohortId,
     };
-    fetch(`/admin/cohorts/edit/${cohortID}`, {
+    fetch(`/admin/cohorts/edit/${cohortId}`, {
       method: 'POST',
       credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify(data),
     })
-      .then((response) => { response.json(); })
+      .then(response => response.json())
       .then((response) => {
-        swal('Good job!', 'Edit Successfully!', 'success').then((value) => {
+        swal('Good job!', response.message, 'success').then((value) => {
           window.location = '/admin/cohorts';
           JSON.stringify(response);
         });
