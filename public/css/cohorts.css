@@ -15,7 +15,9 @@ select.styled option {
   border: 1px solid #fff;
   background: #ffffff;
 }
-
+.errorValid{
+  color: red;
+}
 select.styled {
   vertical-align: top;
   text-overflow: ellipsis;
@@ -91,11 +93,12 @@ select.styled:not([multiple="multiple"]) {
 
 .sectionAddcoh {
   display: none;
+  margin-bottom: 6rem;
 }
 
 .sectionAddcoh--visible {
   display: block;
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 .sectionstd--visible {
@@ -116,6 +119,7 @@ input[type="text"] {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 60%;
   box-sizing: border-box;
   margin-bottom: 2%;
 }

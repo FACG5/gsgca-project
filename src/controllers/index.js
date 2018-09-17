@@ -14,6 +14,7 @@ router.use(authCheck);
 router.get('/admin', adminHomePage.get);
 router.get('/admin/logout', adminHomePage.logout);
 router.get('/admin/cohorts', cohorts.get);
+router.post('/admin/cohorts', cohorts.addCohort);
 router.get('/admin/cohorts/:cohortID/students', cohorts.getStudents);
 
 module.exports = router;
