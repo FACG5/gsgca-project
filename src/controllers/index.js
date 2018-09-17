@@ -17,6 +17,7 @@ router.get('/admin/logout', authCheck, adminHomePage.logout);
 router.get('/admin/cohorts', authCheck, cohorts.get);
 router.get('/admin/cohorts/:cohortID/students', authCheck, cohorts.getStudents);
 router.post('/admin/cohorts/:cohortID/newStudent', authCheck, students.post);
+router.delete('/admin/cohorts/:cohortID/deleteStudent', authCheck, students.delete);
 
 router.use(error.client);
 router.use(error.server);
