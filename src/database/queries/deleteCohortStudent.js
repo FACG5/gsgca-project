@@ -1,7 +1,6 @@
 const dbConnection = require('../db_connection');
 
-const deleteStudentQuery = (deleteStdData, cb) => {
-  const { stdId, cohortID } = deleteStdData;
+const deleteStudentQuery = ({ stdId, cohortID }, cb) => {
   const sql = {
     text: 'DELETE FROM student where id=$1 AND cohort_id=$2',
     values: [stdId, cohortID],
