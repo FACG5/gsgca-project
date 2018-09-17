@@ -1,6 +1,7 @@
 const getCohortStudentsQuery = require('../database/queries/getCohortStudents');
 const getCohortsQuery = require('../database/queries/getCohorts');
 const { deleteCohort } = require('../database/queries/deleteCohort');
+const { addCohorts } = require('../database/queries/addCohort');
 
 const jsFile = ['cohort', 'delCohort'];
 
@@ -54,6 +55,22 @@ exports.deleteCohort = (req, response, next) => {
   deleteCohort(data.deleteid)
     .then((results) => {
       response.send(JSON.stringify(results));
+    })
+    .catch((err) => {
+      next(err);
+    });
+};
+
+exports.addCohort = (req, response, next) => {
+  const data = req.body;
+  const {
+    name, description, githublink, imgURl,
+  } = data;
+  addCohorts(name, description, githublink, imgURl)
+    .then((results) => {
+      response.render('cohort', {
+        title: 'Cohort', style: ['main', 'cohort'], js: ['main', 'cohort', 'delCohort'], results,
+      });
     })
     .catch((err) => {
       next(err);
