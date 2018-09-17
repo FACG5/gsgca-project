@@ -29,8 +29,6 @@ const deleteButtonFunction = (button, route, redirectLocation, dataOfDelete) => 
               window.location = redirectLocation;
             });
           });
-      } else {
-        swal('Student is safe !');
       }
     });
   });
