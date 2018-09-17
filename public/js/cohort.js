@@ -22,7 +22,8 @@ const checkName = () => {
     displayErr(nameerror, 'name Cohort is required');
   } else {
     displayErr(nameerror, '');
-    return true;  }
+    return true;
+  }
 };
 
 const checkDescriptions = () => {

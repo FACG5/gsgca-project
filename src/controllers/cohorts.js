@@ -17,7 +17,7 @@ exports.get = (request, response) => {
 };
 
 
-exports.getStudents = (request, response) => {  
+exports.getStudents = (request, response) => {
   const { cohortID } = request.params;
   getCohortStudentsQuery(cohortID, (err, res) => {
     if (err) {

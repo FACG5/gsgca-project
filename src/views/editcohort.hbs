@@ -1,0 +1,30 @@
+<section class="content">
+        {{#each results}}
+    <section  id="EditCoh">
+        <h2>Edit {{this.name}}</h2>
+        <div class="cohDiv">
+            <label for="name"> Name</label>
+            <div>
+             <input type="text" id="name" name="name" placeholder="Name" value="{{this.name}}">
+                <p id="nameerror" class="errorValid"></p>
+            </div>
+            <label for="Description"> Description</label>
+            <div>
+                <input type="text" id="description" name="Description" value="{{this.description}}" placeholder="Description" required>
+                <p id="deserror" class="errorValid"></p>
+            </div>
+            <label for="link">Github Link</label>
+            <div>
+                <input type="text" id="githublink" name="link" value="{{this.githublink}}" placeholder="Github Link" required>
+                <p id="giterror" class="errorValid"></p>
+            </div>
+            <label for="Image"> Image</label>
+            <div>
+                <input type="text" id="imgURl" name="Image" value="{{this.imgurl}}" placeholder=" Link Image" required>
+                <p id="imgerror" class="errorValid"></p>
+            </div>
+            <input type="submit" id="editCohort" value="Edit Cohort"> 
+        </div>
+        {{/each}}
+    </section>
+</section>
