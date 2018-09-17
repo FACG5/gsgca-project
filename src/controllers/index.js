@@ -15,12 +15,13 @@ router.post('/admin/login', login.post);
 router.get('/admin', authCheck, adminHomePage.get);
 router.get('/admin/logout', authCheck, adminHomePage.logout);
 router.get('/admin/cohorts', authCheck, cohorts.get);
+router.post('/admin/cohorts', authCheck, cohorts.addCohort);
+router.delete('/admin/cohorts', authCheck, cohorts.deleteCohort);
 router.get('/admin/cohorts/:cohortID/students', authCheck, cohorts.getStudents);
 router.post('/admin/cohorts/:cohortID/newStudent', authCheck, students.post);
 router.delete('/admin/cohorts/:cohortID/deleteStudent', authCheck, students.delete);
 
 router.use(error.client);
 router.use(error.server);
-
 
 module.exports = router;
