@@ -25,8 +25,10 @@ exports.get = (request, response) => {
 };
 
 exports.getStudents = (request, response) => {
-  const { cohortID } = request.params;
-  getCohortStudentsQuery(cohortID, (err, res) => {
+  const { cohortId } = request.params;
+  console.log(request.params);
+  
+  getCohortStudentsQuery(cohortId, (err, res) => {
     if (err) {
       return response.render('cohortStudents', {
         err: 'cannot get cohort Students !',

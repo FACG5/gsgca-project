@@ -3,9 +3,9 @@ const studentName = document.getElementById('studentName');
 const gitHubUserName = document.getElementById('gitHubUserName');
 const addStudentButton = document.getElementById('addStudentButton');
 const loading = document.getElementById('loading');
-const URL = window.location.href;
-const splitUrl = URL.split('/');
-const cohortID = splitUrl[splitUrl.length - 2];
+const Url = window.location.href;
+const splitUrl = Url.split('/');
+const cohortId = splitUrl[splitUrl.length - 2];
 const deleteStudentButton = document.querySelectorAll('.delete');
 
 const showAddStudentDiv = () => {
@@ -31,15 +31,15 @@ addStudentButton.addEventListener('click', (e) => {
         return response.json();
       })
       .then((response) => {
-        const { avatar_url: avatarUrl, html_url: htmlUrl } = response;
+        const { avatar_Url: avatarUrl, html_Url: htmlUrl } = response;
         const newStudent = {
           name: studentNameValue,
           username: gitHubUserNameValue,
           htmlUrl,
           avatarUrl,
-          cohortID,
+          cohortId,
         };
-        fetch(`/admin/cohorts/${cohortID}/newStudent`, {
+        fetch(`/admin/cohorts/${cohortId}/newStudent`, {
           method: 'POST',
           credentials: 'same-origin',
           headers: { 'content-type': 'application/json' },
@@ -54,7 +54,7 @@ addStudentButton.addEventListener('click', (e) => {
               return swal('Error', detail, 'error');
             }
             return swal(result.message, ' ', 'success').then((value) => {
-              window.location = `/admin/cohorts/${cohortID}/students`;
+              window.location = `/admin/cohorts/${cohortId}/students`;
             });
           });
       })
@@ -67,9 +67,9 @@ addStudentButton.addEventListener('click', (e) => {
 });
 
 deleteStudentButton.forEach((button) => {
-  const deleteStudentData = { stdId: button.id, cohortID };
+  const deleteStudentData = { stdId: button.id, cohortId };
 
-  const route = `/admin/cohorts/${cohortID}/deleteStudent`;
-  const routeToRedirect = `/admin/cohorts/${cohortID}/students`;
+  const route = `/admin/cohorts/${cohortId}/deleteStudent`;
+  const routeToRedirect = `/admin/cohorts/${cohortId}/students`;
 deleteButtonFunction(button, route, routeToRedirect, deleteStudentData);
 });
