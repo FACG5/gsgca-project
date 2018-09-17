@@ -121,7 +121,7 @@ input[type="text"] {
   border-radius: 4px;
   width: 60%;
   box-sizing: border-box;
-  margin-bottom: 2%;
+  margin-bottom: 1rem;
 }
 
 input[type="submit"] {
