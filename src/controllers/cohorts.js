@@ -69,7 +69,7 @@ exports.addCohort = (req, response, next) => {
   addCohorts(name, description, githublink, imgURl)
     .then((results) => {
       response.render('cohort', {
-        title: 'Cohort', style: ['main', 'cohort'], js: ['main', 'cohort', 'delCohort'], results,
+        title: 'Cohort', styleFile: 'cohorts', jsFile, layout: 'adminLayout', results,
       });
     })
     .catch((err) => {

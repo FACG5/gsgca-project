@@ -4,6 +4,7 @@ const login = require('./login');
 const error = require('./error');
 const adminHomePage = require('./adminHomePage');
 const cohorts = require('./cohorts');
+const editcohort = require('./editcohort');
 const students = require('./Students');
 const { authCheck } = require('./middleware');
 
@@ -17,6 +18,8 @@ router.get('/admin/logout', authCheck, adminHomePage.logout);
 router.get('/admin/cohorts', authCheck, cohorts.get);
 router.post('/admin/cohorts', authCheck, cohorts.addCohort);
 router.delete('/admin/cohorts', authCheck, cohorts.deleteCohort);
+router.get('/admin/cohorts/edit/:id', authCheck, editcohort.getCohortData);
+router.post('/admin/cohorts/edit/:id', authCheck, editcohort.editCohort);
 router.get('/admin/cohorts/:cohortID/students', authCheck, cohorts.getStudents);
 router.post('/admin/cohorts/:cohortID/newStudent', authCheck, students.post);
 
