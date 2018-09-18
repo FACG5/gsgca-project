@@ -22,7 +22,7 @@ router.get('/cohort', cohortWebsite.get);
 router.get('/clientProjects', clientProjectsWebsite.get);
 router.get('/communityProjects', communityProjectsWebsite.get);
 router.get('/projects/id', projectPageWebsite.get);
-router.get('/cohortPageWebsite/id', cohortPageWebsite.get);
+router.get('/cohortPageWebsite/:id', cohortPageWebsite.get);
 
 router.get('/admin/login', login.get);
 router.post('/admin/login', login.post);
