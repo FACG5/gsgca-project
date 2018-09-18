@@ -6,7 +6,7 @@ const addStudentQuery = (newStudent, cb) => {
   } = newStudent;
 
   const sql = {
-    text: 'INSERT INTO student (name, username, githublink, imgurl, cohort_id) values ($1,$2,$3,$4,$5) RETURNING name',
+    text: 'INSERT INTO student (name, username, githublink, img_url, cohort_id) values ($1,$2,$3,$4,$5) RETURNING name',
     values: [name, username, htmlUrl, avatarUrl, cohortId],
   };
   dbConnection.query(sql, (err, result) => {
