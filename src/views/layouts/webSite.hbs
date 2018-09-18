@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{>webSite/webSiteHead}}
+</head>
+
+<body>
+  {{>webSite/webSiteHeader}}
+  <main>
+    {{{body}}}
+  </main>
+  {{>webSite/webSiteFooter}}
+  <script src="/js/mainWebSite.js"></script>
+  {{#if jsFile}} 
+    <script src="/js/{{jsFile}}.js"></script>
+  {{/if}}
+
+</body>
+
+</html>

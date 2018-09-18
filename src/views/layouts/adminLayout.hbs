@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{>adminHead}}
+    {{>adminPanel/adminHead}}
 </head>
 
 <body>
 
-    {{>adminHeader}}
+    {{>adminPanel/adminHeader}}
     <main class="wrapper">
-        {{>adminSidebar}} {{{body}}}
+        {{>adminPanel/adminSidebar}} {{{body}}}
 
     </main>
-    {{>adminFooter}}
+    {{>adminPanel/adminFooter}}
     {{#if jsFile}}
       {{#each jsFile}}
         <script src="/js/{{this}}.js"></script>

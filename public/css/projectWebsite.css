@@ -1,0 +1,80 @@
+.section2 {
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  width: 75%;
+  margin: 0 auto;
+}
+.textmain {
+  text-align: center;
+  font-family: lato;
+  color: #389dbf;
+  font-size: 28px;
+  line-height: 43px;
+  letter-spacing: 5%;
+  font-weight: bold;
+}
+
+.codeAcademy {
+  text-align: justify;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Roboto;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: #757575;
+}
+
+.client_project {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.client_project > div {
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  color: #757575;
+  padding: 5%;
+}
+
+.client_project > div:hover {
+  -webkit-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
+}
+.projectImg {
+  border-radius: 5px;
+
+  max-width: 100%;
+}
+h5 {
+  font-weight: bold;
+}
+.projectImg {
+  border-radius: 5px;
+
+  max-width: 100%;
+}
+
+.informationUl {
+  margin-left: 7%;
+  font-weight: bold;
+  color: #757575;
+  margin-bottom: 3%;
+}
+.informationUl > li {
+  margin-bottom: 1%;
+}
+
+.sutdentsUl {
+  margin-left: 5%;
+  list-style: decimal;
+}
