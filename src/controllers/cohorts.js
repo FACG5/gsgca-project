@@ -20,7 +20,7 @@ exports.get = (request, response) => {
       styleFile: 'cohorts',
       jsFile,
       layout: 'adminLayout',
-      title: 'Admin Panel : Cohorts',
+      title: 'Admin Panel | Cohorts',
     });
   });
 };
@@ -34,7 +34,7 @@ exports.getStudents = (request, response) => {
         styleFile: 'cohorts',
         jsFile,
         layout: 'adminLayout',
-        title: 'Admin Panel : Students',
+        title: 'Admin Panel | Students',
       });
     }
 
@@ -44,7 +44,7 @@ exports.getStudents = (request, response) => {
         styleFile: 'cohorts',
         jsFile: ['cohortStudent'],
         layout: 'adminLayout',
-        title: 'Admin Panel : Students',
+        title: 'Admin Panel | Students',
       });
     }
 
@@ -54,7 +54,7 @@ exports.getStudents = (request, response) => {
       styleFile: 'cohorts',
       jsFile: ['cohortStudent'],
       layout: 'adminLayout',
-      title: 'Admin Panel : Students',
+      title: 'Admin Panel | Students',
     });
   });
 };

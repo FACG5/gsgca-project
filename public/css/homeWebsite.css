@@ -9,7 +9,7 @@ mySlides {
 }
 
 .section2 {
-  padding: 2%;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
@@ -49,7 +49,7 @@ mySlides {
   border-radius: 10px;
   text-align: center;
   font-size: 16px;
-  letter-spacing: 5%;
+  letter-spacing: 1px;
   border: none;
   transition-duration: 0.3s;
 }
@@ -94,7 +94,7 @@ mySlides {
   font-family: Roboto;
   color: #389dbf;
   line-height: 43px;
-  letter-spacing: 5%;
+  letter-spacing: 1px;
   font-weight: bold;
 }
 

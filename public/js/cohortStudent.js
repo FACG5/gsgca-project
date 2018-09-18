@@ -2,50 +2,30 @@ const addStd = document.getElementById('addStd');
 const studentName = document.getElementById('studentName');
 const gitHubUserName = document.getElementById('gitHubUserName');
 const addStudentButton = document.getElementById('addStudentButton');
-const loading = document.getElementById('loading');
-const Url = window.location.href;
-const splitUrl = Url.split('/');
-const cohortId = splitUrl[splitUrl.length - 2];
+const url = window.location.href;
+const spliturl = url.split('/');
+const cohortId = spliturl[spliturl.length - 2];
 const deleteStudentButton = document.querySelectorAll('.delete');
 
 const showAddStudentDiv = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
 
-
 addStudentButton.addEventListener('click', (e) => {
   e.preventDefault();
-
-  const studentNameValue = studentName.value;
-  const gitHubUserNameValue = gitHubUserName.value;
-  if (
-    studentNameValue.trim() !== 0
-    && gitHubUserNameValue.trim() !== 0
-  ) {
+  studentNameValue = studentName.value;
+  gitHubUserNameValue = gitHubUserName.value;
+  if (studentNameValue.trim() && gitHubUserNameValue.trim()) {
     const apiLink = `https://api.github.com/users/${gitHubUserNameValue}`;
-    fetch(apiLink, { method: 'GET' })
-      .then((loading.style.display = 'block'))
-      .then((response) => {
-        loading.style.display = 'none';
-        if (response.status !== 200) throw new Error('Invalid_username');
-        return response.json();
-      })
-      .then((response) => {
-        const { avatar_Url: avatarUrl, html_Url: htmlUrl } = response;
-        const newStudent = {
-          name: studentNameValue,
-          username: gitHubUserNameValue,
-          htmlUrl,
-          avatarUrl,
-          cohortId,
-        };
+    apiFetch(apiLink)
+      .then((result) => {
         fetch(`/admin/cohorts/${cohortId}/newStudent`, {
           method: 'POST',
           credentials: 'same-origin',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify(newStudent),
+          body: JSON.stringify(result),
         })
-          .then(result => result.json())
+          .then(result => result.json())   
           .then((result) => {
             if (result.err) {
               const { code } = result.err;
@@ -58,9 +38,9 @@ addStudentButton.addEventListener('click', (e) => {
             });
           });
       })
-      .catch((err) => {
-        swal('Not Valid Github Username ! ', '', 'error');
-      });
+      .catch((error) => {
+        swal(error, '', 'error');
+      });  
   } else {
     swal('Please Enter Data ! ! ', '', 'error');
   }
@@ -71,5 +51,5 @@ deleteStudentButton.forEach((button) => {
 
   const route = `/admin/cohorts/${cohortId}/deleteStudent`;
   const routeToRedirect = `/admin/cohorts/${cohortId}/students`;
-deleteButtonFunction(button, route, routeToRedirect, deleteStudentData);
+  deleteButtonFunction(button, route, routeToRedirect, deleteStudentData);
 });
