@@ -3,6 +3,7 @@ const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const favicon = require('serve-favicon');
 const controllers = require('./controllers');
 
 const app = express();
@@ -23,6 +24,7 @@ app.engine(
 );
 
 app.set('port', process.env.PORT || 7000);
+app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controllers);
 
