@@ -10,11 +10,11 @@ let gitHubUserNameValue = '';
 editStudentButton[0].addEventListener('click', (e) => {
   studentNameValue = newName.value;
   gitHubUserNameValue = newUsername.value;
-  if (studentNameValue.trim() !== 0 && gitHubUserNameValue.trim() !== 0) {
+  if (studentNameValue.trim() && gitHubUserNameValue.trim()) {
     const apiLink = `https://api.github.com/users/${gitHubUserNameValue}`;
     apiFetch(apiLink)
       .then((result) => {
-        const studentId = editStudentButton[0].id
+        const studentId = editStudentButton[0].id;
         fetch(
           `/admin/cohorts/${cohortId}/editStudent/${studentId}`,
           {
