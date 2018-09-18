@@ -15,6 +15,7 @@ const addProjectButton = document.getElementById('addproj');
 const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortId = splitUrl[splitUrl.length - 2];
+const deleteProjectButton = document.querySelectorAll('.delete');
 
 const students = () => {
   student.classList.toggle('sectionstd--visible');
@@ -26,52 +27,6 @@ const addProject = () => {
 
 const addStudents = () => {
   addStd.classList.toggle('sectionAddstd--visible');
-};
-
-const displayErr = (errElem, errMsg) => {
-  errElem.textContent = errMsg;
-};
-
-const checkName = () => {
-  if (!name.value) {
-    displayErr(nameError, 'Project Name is required');
-  } else {
-    displayErr(nameError, '');
-    return true;
-  }
-};
-
-const checkDescription = () => {
-  if (!description.value) {
-    displayErr(descriptionError, 'Project Description is required');
-  } else {
-    displayErr(descriptionError, '');
-    return true;
-  }
-};
-const checkGitLink = () => {
-  if (!gitLink.value) {
-    displayErr(gitError, 'Project Github Link is required');
-  } else {
-    displayErr(gitError, '');
-    return true;
-  }
-};
-const checkWebLink = () => {
-  if (!webLink.value) {
-    displayErr(webError, 'Project Website Link is required');
-  } else {
-    displayErr(webError, '');
-    return true;
-  }
-};
-const checkImage = () => {
-  if (!imgUrl.value) {
-    displayErr(imgError, 'Project Image is required');
-  } else {
-    displayErr(imgError, '');
-    return true;
-  }
 };
 
 name.addEventListener('focusout', checkName);
@@ -113,4 +68,10 @@ addProjectButton.addEventListener('click', (e) => {
       })
       .catch(error => swal(error, 'error', 'error'));
   }
+});
+deleteProjectButton.forEach((button) => {
+  const deleteProjectData = { projectId: button.id, cohortId };
+  const route = `/admin/community/${cohortId}/deleteProject`;
+  const routeToRedirect = `/admin/community/${cohortId}/projects`;
+  deleteButtonFunction(button, route, routeToRedirect, deleteProjectData);
 });
