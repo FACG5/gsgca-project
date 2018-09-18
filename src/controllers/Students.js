@@ -6,10 +6,11 @@ const getStudentData = require('../database/queries/getStudent');
 exports.post = (request, response) => {
   addStudent(request.body, (err, res) => {
     if (err) return response.send(JSON.stringify({ err }));
+    const nameOfStudent = res[0].name;
     return response.send(
       JSON.stringify({
         err: null,
-        message: `New Stuent Added , with Name ${res[0].name}`,
+        message: `New Stuent Added , with Name ${nameOfStudent}`,
       }),
     );
   });

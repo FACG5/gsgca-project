@@ -1,6 +1,6 @@
-const Url = window.location.href;
-const splitUrl = Url.split('/');
-const cohortId = splitUrl[splitUrl.length - 3];
+const url = window.location.href;
+const spliturl = url.split('/');
+const cohortId = spliturl[spliturl.length - 3];
 const editStudentButton = document.getElementsByClassName('editButton');
 const newUsername = document.getElementById('username');
 const newName = document.getElementById('name');
@@ -14,8 +14,9 @@ editStudentButton[0].addEventListener('click', (e) => {
     const apiLink = `https://api.github.com/users/${gitHubUserNameValue}`;
     apiFetch(apiLink)
       .then((result) => {
+        const studentId = editStudentButton[0].id
         fetch(
-          `/admin/cohorts/${cohortId}/editStudent/${editStudentButton[0].id}`,
+          `/admin/cohorts/${cohortId}/editStudent/${studentId}`,
           {
             method: 'PUT',
             credentials: 'same-origin',

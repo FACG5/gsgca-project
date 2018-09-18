@@ -2,11 +2,10 @@ const addStd = document.getElementById('addStd');
 const studentName = document.getElementById('studentName');
 const gitHubUserName = document.getElementById('gitHubUserName');
 const addStudentButton = document.getElementById('addStudentButton');
-const Url = window.location.href;
-const splitUrl = Url.split('/');
-const cohortId = splitUrl[splitUrl.length - 2];
+const url = window.location.href;
+const spliturl = url.split('/');
+const cohortId = spliturl[spliturl.length - 2];
 const deleteStudentButton = document.querySelectorAll('.delete');
-
 
 const showAddStudentDiv = () => {
   addStd.classList.toggle('sectionAddstd--visible');
@@ -14,7 +13,6 @@ const showAddStudentDiv = () => {
 
 addStudentButton.addEventListener('click', (e) => {
   e.preventDefault();
-
   studentNameValue = studentName.value;
   gitHubUserNameValue = gitHubUserName.value;
   if (studentNameValue.trim().length !== 0 && gitHubUserNameValue.trim().length !== 0) {
