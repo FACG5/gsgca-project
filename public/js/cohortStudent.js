@@ -17,7 +17,7 @@ addStudentButton.addEventListener('click', (e) => {
 
   studentNameValue = studentName.value;
   gitHubUserNameValue = gitHubUserName.value;
-  if (studentNameValue.trim() !== 0 && gitHubUserNameValue.trim() !== 0) {
+  if (studentNameValue.trim().length !== 0 && gitHubUserNameValue.trim().length !== 0) {
     const apiLink = `https://api.github.com/users/${gitHubUserNameValue}`;
     apiFetch(apiLink)
       .then((result) => {
