@@ -8,6 +8,7 @@ const nameerror = document.getElementById('nameerror');
 const deserror = document.getElementById('deserror');
 const giterror = document.getElementById('giterror');
 const imgerror = document.getElementById('imgerror');
+const deleteCohortsArray = document.querySelectorAll('.delete');
 
 const addCohort = () => {
   addCoh.classList.toggle('sectionAddcoh--visible');
@@ -65,7 +66,10 @@ addCohorts.addEventListener('click', (e) => {
     const githublink = githublinks.value;
     const imgURl = imgURls.value;
     const data = {
-      name, description, githublink, imgURl,
+      name,
+      description,
+      githublink,
+      imgURl,
     };
     fetch('/admin/cohorts', {
       method: 'POST',
@@ -73,13 +77,23 @@ addCohorts.addEventListener('click', (e) => {
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify(data),
     })
-      .then((response) => { response.json(); })
+      .then(result => result.json())
       .then((response) => {
-        swal('Good job!', 'Add Successfully!', 'success').then((value) => {
+        swal('Good job!', response.message, 'success').then((value) => {
           window.location = '/admin/cohorts';
           JSON.stringify(response);
         });
       })
       .catch(error => swal(error, 'error', 'error'));
   }
+});
+
+deleteCohortsArray.forEach((button) => {
+  const deleteid = button.id;
+  const data = {
+    deleteid,
+  };
+  const route = '/admin/cohorts';
+  const routeToRedirect = '/admin/cohorts';
+deleteButtonFunction(button, route, routeToRedirect, data);
 });

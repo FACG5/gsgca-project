@@ -3,31 +3,38 @@ const getCohortsQuery = require('../database/queries/getCohorts');
 const { deleteCohort } = require('../database/queries/deleteCohort');
 const { addCohorts } = require('../database/queries/addCohort');
 
-const jsFile = ['cohort', 'delCohort'];
+const jsFile = ['cohort'];
 
 exports.get = (request, response) => {
   getCohortsQuery((err, res) => {
     if (err) {
       return response.render('cohort', {
-        err: 'cannot get the cohorts !', styleFile: 'cohorts', jsFile, layout: 'adminLayout',
+        err: 'cannot get the cohorts !',
+        styleFile: 'cohorts',
+        jsFile,
+        layout: 'adminLayout',
       });
     }
     return response.render('cohort', {
-      res, styleFile: 'cohorts', jsFile, layout: 'adminLayout',
+      res,
+      styleFile: 'cohorts',
+      jsFile,
+      layout: 'adminLayout',
+      title: 'Admin Panel : Cohorts',
     });
   });
 };
 
-
 exports.getStudents = (request, response) => {
-  const { cohortID } = request.params;
-  getCohortStudentsQuery(cohortID, (err, res) => {
+  const { cohortId } = request.params;
+  getCohortStudentsQuery(cohortId, (err, res) => {
     if (err) {
       return response.render('cohortStudents', {
         err: 'cannot get cohort Students !',
         styleFile: 'cohorts',
         jsFile,
-        layout: 'main',
+        layout: 'adminLayout',
+        title: 'Admin Panel : Students',
       });
     }
 
@@ -37,6 +44,7 @@ exports.getStudents = (request, response) => {
         styleFile: 'cohorts',
         jsFile: ['cohortStudent'],
         layout: 'adminLayout',
+        title: 'Admin Panel : Students',
       });
     }
 
@@ -46,6 +54,7 @@ exports.getStudents = (request, response) => {
       styleFile: 'cohorts',
       jsFile: ['cohortStudent'],
       layout: 'adminLayout',
+      title: 'Admin Panel : Students',
     });
   });
 };
@@ -54,7 +63,8 @@ exports.deleteCohort = (req, response, next) => {
   const data = req.body;
   deleteCohort(data.deleteid)
     .then((results) => {
-      response.send(JSON.stringify(results));
+      const result = { err: null, message: 'Cohort Deleted !' };
+      response.send(JSON.stringify(result));
     })
     .catch((err) => {
       next(err);
@@ -68,9 +78,8 @@ exports.addCohort = (req, response, next) => {
   } = data;
   addCohorts(name, description, githublink, imgURl)
     .then((results) => {
-      response.render('cohort', {
-        title: 'Cohort', styleFile: 'cohorts', jsFile, layout: 'adminLayout', results,
-      });
+      const result = { message: 'Cohort Added !' };
+      response.send(JSON.stringify(result));
     })
     .catch((err) => {
       next(err);
