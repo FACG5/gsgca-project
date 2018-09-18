@@ -25,6 +25,7 @@
   "devDependencies": {
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-hbs": "^0.1.1",
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.4",
     "supertest": "^3.3.0",
@@ -41,6 +42,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "jsonwebtoken": "^8.3.0",
-    "pg": "^7.4.3"
+    "pg": "^7.4.3",
+    "serve-favicon": "^2.5.0"
   }
 }
