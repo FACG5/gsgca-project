@@ -124,6 +124,9 @@ h5{
   font-weight: bold;
 }
 
+.active{
+  color:#ffa41f
+}
 .w3-left,
 .w3-right,
 .w3-badge {

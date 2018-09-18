@@ -3,16 +3,16 @@
   <img class="menu-icon" src="/img/menu.png" alt="" onclick="myFunction()">
   <nav class="topnav" id="myTopnav">
     <ul class="topnavUL" id="topnavUL">
-      <li>
+      <li{{#if home}} class='active' {{/if}}>
         <a href="/" class="menu">Home</a>
       </li>
-      <li>
+      <li {{#if cohortPage}} class='active' {{/if}}>
         <a href="/cohort" class="menu">Alumni</a>
       </li>
-      <li>
-        <a href="/communityProjects" class="menu active">Community Projects</a>
+      <li{{#if communityProjects}} class='active' {{/if}}>
+        <a href="/communityProjects" class="menu">Community Projects</a>
       </li>
-      <li>
+      <li{{#if clientProjects}} class='active' {{/if}}>
         <a href="/clientProjects" class="menu">Client Projects</a>
       </li>
     </ul>
