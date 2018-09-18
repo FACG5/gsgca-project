@@ -1,4 +1,5 @@
 const sub = document.getElementById('sub');
+const loading = document.getElementById('loading');
 
 const subMenu = () => {
   sub.classList.toggle('sub-menu--visible');
