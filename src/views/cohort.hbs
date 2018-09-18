@@ -2,7 +2,7 @@
   <button class="button button2" onclick="addCohort()">ADD Cohort</button>
   <section>
     {{#if err}}
-     <h3>{{err}}</h3>
+    <h3>{{err}}</h3>
     {{else}}
     <table class="tabel">
       <tr>
@@ -25,8 +25,7 @@
           <a href="{{imgurl}}">click</a>
         </td>
         <td>
-          <a>
-            Edit </a>
+          <a href="/admin/cohorts/edit/{{this.id}}" id="{{this.id}}">Edit</a>
         </td>
         <td>
           <a class="delete" id="{{this.id}}">
@@ -45,25 +44,25 @@
     <h2>Add Cohort</h2>
     <div class="cohDiv">
       <label for="name"> Name</label>
-      <div>
-        <input type="text" id="name" name="name" placeholder="Name" required>
-        <p id="nameerror" class="errorValid"></p>
-      </div>
-      <label for="Description"> Description</label>
-      <div>
-        <input type="text" id="description" name="Description" placeholder="Description" required>
-        <p id="deserror" class="errorValid"></p>
-      </div>
-      <label for="link">Github Link</label>
-      <div>
-        <input type="text" id="githublink" name="link" placeholder="Github Link" required>
-        <p id="giterror" class="errorValid"></p>
-      </div>
-      <label for="Image"> Image</label>
-      <div>
-        <input type="text" id="imgURl" name="Image" placeholder=" Link Image" required>
-        <p id="imgerror" class="errorValid"></p>
-      </div>
-      <input type="submit" id="addCohort" value="ADD Cohort">
+    <div>
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <p id="nameerror" class="errorValid"></p>
     </div>
-  </section>
+    <label for="Description"> Description</label>
+    <div>
+      <input type="text" id="description" name="Description" placeholder="Description" required>
+      <p id="deserror" class="errorValid"></p>
+    </div>
+    <label for="link">Github Link</label>
+     <div>
+      <input type="text" id="githublink" name="link" placeholder="Github Link" required>
+      <p id="giterror" class="errorValid"></p>
+     </div>
+     <label for="Image"> Image</label>
+     <div>
+       <input type="text" id="imgURl" name="Image" placeholder=" Link Image" required>
+       <p id="imgerror" class="errorValid"></p>
+     </div>
+     <input type="submit" id="addCohort" value="ADD Cohort">
+  </div>
+</section>
