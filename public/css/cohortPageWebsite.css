@@ -67,7 +67,7 @@ h5 {
   color: #389dbf;
   font-size: 2rem;
   line-height: 43px;
-  letter-spacing: 5%;
+  letter-spacing: 5px;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
@@ -105,7 +105,7 @@ h5 {
 }
 
 .info {
-  padding: 2%;
+  padding: 4px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 10px;
@@ -169,7 +169,7 @@ hr {
 }
 
 .silderSection {
-  margin-top: 5%;
+  margin-top: 1rem;
 }
 
 .icon:hover {
@@ -211,5 +211,5 @@ hr {
   .next {
     display: none !important;
   }
-  
+
 }
