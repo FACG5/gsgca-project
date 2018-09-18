@@ -5,7 +5,7 @@ const error = require('./error');
 const adminHomePage = require('./adminHomePage');
 const cohorts = require('./cohorts');
 const editcohort = require('./editCohort');
-const students = require('./Students');
+const students = require('./students');
 const { authCheck } = require('./middleware');
 
 const router = express.Router();
@@ -24,6 +24,8 @@ router.post('/admin/cohorts/:cohortId/newStudent', authCheck, students.post);
 router.get('/admin/cohorts/:cohortId/students', authCheck, cohorts.getStudents);
 router.post('/admin/cohorts/:cohortId/newStudent', authCheck, students.post);
 router.delete('/admin/cohorts/:cohortId/deleteStudent', authCheck, students.delete);
+router.put('/admin/cohorts/:cohortId/editStudent/:id', authCheck, students.put);
+router.get('/admin/cohorts/:cohortId/editStudent/:id', authCheck, students.editPage);
 
 router.use(error.client);
 router.use(error.server);
