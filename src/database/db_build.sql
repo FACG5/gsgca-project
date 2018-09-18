@@ -11,14 +11,14 @@ id SERIAL PRIMARY KEY,
 name VARCHAR(20),
 description TEXT,
 githublink VARCHAR(200),
-imgURl VARCHAR(200)
+img_url VARCHAR(200)
 );
 CREATE TABLE student (
 id SERIAL PRIMARY KEY,
 name VARCHAR(20),
 username VARCHAR(20),
 githublink VARCHAR(200),
-imgURl VARCHAR(200),
+img_url VARCHAR(200),
 cohort_id INTEGER REFERENCES cohort(id)   ON DELETE CASCADE
 );
 
@@ -28,6 +28,7 @@ name VARCHAR(50),
 description TEXT,
 githublink VARCHAR(200),
 websitelink VARCHAR(200),
+img_url VARCHAR(200),
 cohort_id INTEGER REFERENCES cohort(id)   ON DELETE CASCADE
 );
 
@@ -41,7 +42,7 @@ INSERT INTO admin (username,password) values ('admin',
 '$2y$12$yhE8ruRCa7kJ9P8z.CqOEe4A6U1P9E8dfF1S1aRonYn6d9VWjrz1C');
 
 
-INSERT INTO cohort (name,description,imgURl,githublink) values
+INSERT INTO cohort (name,description,img_url,githublink) values
  ('FACG5','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
 ('FACG2','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
 ('FACG3','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
@@ -51,7 +52,7 @@ INSERT INTO cohort (name,description,imgURl,githublink) values
 
 
 
-INSERT INTO student (name,username,githublink,imgURl,cohort_id) values
+INSERT INTO student (name,username,githublink,img_url,cohort_id) values
 ('Lubna Abd','lubnaabd','https://github.com/lubnaabd','https://avatars1.githubusercontent.com/u/26024284?s=460&v=4',1),
 ('Ibrahem Ali','HemaSAli','https://github.com/hemasali','https://avatars3.githubusercontent.com/u/34215823?s=460&v=4',1),
 ('Ali Haj Ahmed ','ali-7','https://github.com/ali-7','https://avatars0.githubusercontent.com/u/36124895?s=460&v=4',1),

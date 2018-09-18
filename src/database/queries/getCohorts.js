@@ -5,6 +5,7 @@ const getCohortsQuery = (cb) => {
     text: 'select * from cohort',
   };
   dbConnection.query(sql, (err, result) => {
+    console.log(result.rows)
     if (err) return cb(err);
     return cb(null, result.rows);
   });
