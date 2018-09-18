@@ -25,7 +25,7 @@ exports.getProjects = (request, response) => {
   const { cohortId } = request.params;
   getProjectsQuery(cohortId, (err, res) => {
     if (err) {
-      return response.render('CommunityProjects', {
+      return response.render('communityProjects', {
         err: 'cannot get Projects !',
         styleFile: 'projects',
         jsFile: 'projects',
@@ -34,7 +34,7 @@ exports.getProjects = (request, response) => {
       });
     }
     if (res.length === 0) {
-      return response.render('CommunityProjects', {
+      return response.render('communityProjects', {
         err: 'There is no projects in this cohort !',
         styleFile: 'projects',
         jsFile: 'projects',
@@ -42,7 +42,7 @@ exports.getProjects = (request, response) => {
         title: 'Admin Panel | Community Projects',
       });
     }
-    return response.render('CommunityProjects', {
+    return response.render('communityProjects', {
       res,
       cohortname: res[0].cohortname,
       styleFile: 'projects',
