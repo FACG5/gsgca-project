@@ -5,7 +5,7 @@ const error = require('./error');
 const adminHomePage = require('./adminHomePage');
 const cohorts = require('./cohorts');
 const editcohort = require('./editCohort');
-const students = require('./Students');
+const students = require('./students');
 const { authCheck } = require('./middleware');
 
 const router = express.Router();
