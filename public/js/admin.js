@@ -17,6 +17,7 @@ const deleteButtonFunction = (button, route, redirectLocation, dataOfDelete) => 
       if (willDelete) {
         fetch(route, {
           method: 'DELETE',
+          credentials: 'same-origin',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(dataOfDelete),
         })
