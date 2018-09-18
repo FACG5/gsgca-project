@@ -20,6 +20,7 @@ router.delete('/admin/cohorts', authCheck, cohorts.deleteCohort);
 router.get('/admin/cohorts/:cohortId/students', authCheck, cohorts.getStudents);
 router.post('/admin/cohorts/:cohortId/newStudent', authCheck, students.post);
 router.delete('/admin/cohorts/:cohortId/deleteStudent', authCheck, students.delete);
+router.delete('/admin/cohorts/:cohortId/editStudent', authCheck, students.put);
 
 router.use(error.client);
 router.use(error.server);

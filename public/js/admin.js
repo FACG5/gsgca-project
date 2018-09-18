@@ -33,3 +33,24 @@ const deleteButtonFunction = (button, route, redirectLocation, dataOfDelete) => 
     });
   });
 };
+const apiFetch = apiLink => new Promise((resolve, reject) => {
+  fetch(apiLink, { method: 'GET' })
+    .then((loading.style.display = 'block'))
+    .then((response) => {
+      loading.style.display = 'none';
+      if (response.status !== 200) reject('Invalid_username');
+      return response;
+    })
+    .then(response => response.json())
+    .then((response) => {
+      const { avatar_url: avatarUrl, html_url: htmlUrl } = response;
+      const newStudent = {
+        name: studentNameValue,
+        username: gitHubUserNameValue,
+        htmlUrl,
+        avatarUrl,
+        cohortId,
+      };
+      resolve(newStudent);
+    });
+});
