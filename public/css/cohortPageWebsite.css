@@ -23,6 +23,7 @@
   align-self: center;
   margin: auto;
 }
+
 h5 {
   font-weight: bold;
   color: #757575;
@@ -53,6 +54,7 @@ h5 {
   text-align: center;
   color: #fff;
 }
+
 .phase {
   padding: 2%;
   width: 90%;
@@ -140,6 +142,7 @@ h5 {
   width: 100%;
   border-radius: 5px;
 }
+
 .comp {
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
@@ -152,6 +155,7 @@ h5 {
   -moz-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.75);
 }
+
 .comp h4 {
   margin-top: 1rem;
   text-align: center;
@@ -163,13 +167,16 @@ hr {
   height: 1px;
   border-top: 1px solid #ccc;
 }
+
 .silderSection {
   margin-top: 5%;
 }
+
 .icon:hover {
   border: 1.5px solid #fff;
   border-radius: 50%;
 }
+
 .contactInformation {
   font-family: Montserrat;
   font-size: 16px;
@@ -177,25 +184,32 @@ hr {
   margin-left: 2%;
   margin: 10px;
 }
+
 .topnav {
   z-index: 100;
   width: 100%;
 }
+
 .follow,
 .contact {
   margin: 10px 0px 10px 30px;
 }
+
 .students img {
   width: 100%;
   height: auto;
   padding: 5px;
 }
+
 .students h2 {
   text-align: center;
   padding-bottom: 1em;
 }
+
 @media (max-width: 1024px) {
+
   .next {
     display: none !important;
   }
+  
 }
