@@ -1,0 +1,20 @@
+<section class="header" id="myHeader">
+  <img class="logo" src="/img/logo.png" alt="">
+  <img class="menu-icon" src="/img/menu.png" alt="" onclick="myFunction()">
+  <nav class="topnav" id="myTopnav">
+    <ul class="topnavUL" id="topnavUL">
+      <li{{#if home}} class='active' {{/if}}>
+        <a href="/" class="menu">Home</a>
+      </li>
+      <li {{#if cohortPage}} class='active' {{/if}}>
+        <a href="/cohort" class="menu">Alumni</a>
+      </li>
+      <li{{#if communityProjects}} class='active' {{/if}}>
+        <a href="/communityProjects" class="menu">Community Projects</a>
+      </li>
+      <li{{#if clientProjects}} class='active' {{/if}}>
+        <a href="/clientProjects" class="menu">Client Projects</a>
+      </li>
+    </ul>
+  </nav>
+</section>

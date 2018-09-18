@@ -1,0 +1,17 @@
+<section>
+  <img class="imageClient" src="/img/besart-bootcamp.jpg">
+</section>
+<section class="section2">
+  <h1 class="textmain">Cohorts
+  </h1>
+  <section class="cohortList">
+    {{#each res}}
+    <div class="cohort">
+      <a href="/cohortPageWebsite/{{id}}">
+        <img src="{{imgurl}}" alt="">
+      </a>
+      <h5>{{name}}</h5>
+    </div>
+    {{/each}}
+  </section>
+</section>

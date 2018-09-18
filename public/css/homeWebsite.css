@@ -1,0 +1,100 @@
+mySlides {
+  box-shadow: 0px 0px 10px 0px #aaaaaa;
+  width: 100%;
+  -webkit-animation: fadein 1s; 
+  -moz-animation: fadein 1s;
+  -ms-animation: fadein 1s; 
+  -o-animation: fadein 1s;
+  animation: fadein 1s;
+}
+
+.section2 {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.textmain {
+  text-align: center;
+  font-family: lato;
+  color: #389dbf;
+  font-size: 28px;
+  line-height: 43px;
+  letter-spacing: 5%;
+  font-weight: bold;
+}
+
+.codeAcademy {
+  text-align: justify;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Roboto;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: #757575;
+}
+
+.join {
+  justify-self: center;
+  font-weight: bold;
+  outline: none;
+  width: 250px;
+  height: 55px;
+  background-color: #6dab3c;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.join:hover {
+  background-color: #5f9434;
+}
+
+.project {
+  text-align: center;
+  display: grid;
+  width: 80%;
+  grid-template-columns:   repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20%;
+  margin: 0 auto;
+}
+
+.c_project {
+  width: 160px;
+  height: 160px;
+  justify-self: center;
+  border-radius: 50%;
+  background-color: #ffa41f;
+  text-align: center;
+  margin: 0 auto;
+  transition-duration: 0.4s;
+}
+
+.c_project:hover {
+  -webkit-box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
+  -moz-box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
+  box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
+}
+
+.image {
+  margin-top: 45px;
+}
+
+.community {
+  font-size: 17px;
+  text-align: center;
+  font-family: Roboto;
+  color: #389dbf;
+  line-height: 43px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+

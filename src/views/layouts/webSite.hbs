@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      {{>webSite/webSiteHead}}
+    </head>
+
+    <body>
+      {{>webSite/webSiteHeader}}
+      <main>
+        {{{body}}}
+      </main>
+      {{>webSite/webSiteFooter}}
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+      <script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+      <script src="/js/mainWebSite.js"></script>
+      {{#if jsFile}} 
+        <script src="/js/{{jsFile}}.js"></script>
+      {{/if}}
+    </body>
+
+  </html>

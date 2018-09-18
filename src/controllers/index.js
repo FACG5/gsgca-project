@@ -1,5 +1,11 @@
 const express = require('express');
 
+const home = require('./webSiteHome');
+const cohortWebsite = require('./cohortWebsite');
+const clientProjectsWebsite = require('./clientWebsite');
+const communityProjectsWebsite = require('./communityWebsite');
+const projectPageWebsite = require('./projectPageWebsite');
+const cohortPageWebsite = require('./cohortPageWebsite');
 const login = require('./login');
 const error = require('./error');
 const adminHomePage = require('./adminHomePage');
@@ -9,6 +15,13 @@ const students = require('./students');
 const { authCheck } = require('./middleware');
 
 const router = express.Router();
+
+router.get('/', home.get);
+router.get('/cohort', cohortWebsite.get);
+router.get('/clientProjects', clientProjectsWebsite.get);
+router.get('/communityProjects', communityProjectsWebsite.get);
+router.get('/projects/id', projectPageWebsite.get);
+router.get('/cohortPageWebsite/id', cohortPageWebsite.get);
 
 router.get('/admin/login', login.get);
 router.post('/admin/login', login.post);

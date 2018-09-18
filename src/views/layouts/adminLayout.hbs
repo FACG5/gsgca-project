@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    {{>adminHead}}
-</head>
-
-<body>
-
-    {{>adminHeader}}
-    <main class="wrapper">
-        {{>adminSidebar}} {{{body}}}
-
-    </main>
-    {{>adminFooter}}
-    <script src="/js/admin.js"></script>
-    {{#if jsFile}}
-        <script src="/js/{{jsFile}}.js"></script>
-    {{/if}}
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-</body>
-
-</html>
+    <html>
+    <head>
+        {{>adminPanel/adminHead}}
+    </head>
+    <body>
+        {{>adminPanel/adminHeader}}
+        <main class="wrapper">
+            {{>adminPanel/adminSidebar}} {{{body}}}
+        </main>
+        {{>adminPanel/adminFooter}}
+        <script src="/js/admin.js"></script> {{#if jsFile}}
+        <script src="/js/{{jsFile}}.js"></script> {{/if}}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+    </html>

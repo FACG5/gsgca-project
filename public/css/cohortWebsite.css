@@ -1,0 +1,42 @@
+.section2 {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.textmain {
+  text-align: center;
+  font-family: lato;
+  color: #389dbf;
+  font-size: 28px;
+  line-height: 43px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.cohortList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+.cohort {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  text-align: center;
+}
+h5 {
+  font-weight: bold;
+  color: #757575;
+}
+.cohort  img {
+  -webkit-box-shadow: 0px 0px 23px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 23px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 23px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+}
+

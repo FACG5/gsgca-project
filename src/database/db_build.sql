@@ -31,6 +31,7 @@ websitelink VARCHAR(200),
 cohort_id INTEGER REFERENCES cohort(id)   ON DELETE CASCADE
 );
 
+
 CREATE TABLE std_project (
 id SERIAL PRIMARY KEY,
 std_id INTEGER REFERENCES student(id)  ON DELETE CASCADE,
@@ -61,5 +62,13 @@ INSERT INTO student (name,username,githublink,imgURl,cohort_id) values
 ('Lubna Abd','lubnaabd','https://github.com/lubnaabd','https://avatars1.githubusercontent.com/u/26024284?s=460&v=4',3),
 ('Ibrahem Ali','HemaSAli','https://github.com/hemasali','https://avatars3.githubusercontent.com/u/34215823?s=460&v=4',4),
 ('Ali Haj Ahmed ','ali-7','https://github.com/ali-7','https://avatars0.githubusercontent.com/u/36124895?s=460&v=4',5);
+INSERT INTO project (name , description, githublink, websitelink, cohort_id) values
+('a','a','a','a',1),
+('b','a','a','a',2),
+('c','a','a','a',3),
+('d','a','a','a',1);
 
+INSERT INTO std_project (std_id,project_id) values 
+(1,1),
+(1,2);
 COMMIT;
