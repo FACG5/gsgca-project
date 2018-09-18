@@ -5,27 +5,13 @@
   <h1 class="textmain">Cohorts
   </h1>
   <section class="cohortList">
+    {{#each res}}
     <div class="cohort">
-      <a href="/cohortPageWebsite/id">
-        <img src="/img/cohort5.jpg" alt="">
+      <a href="/cohortPageWebsite/{{id}}">
+        <img src="{{imgurl}}" alt="">
       </a>
-      <h5>Cohort 5</h5>
+      <h5>{{name}}</h5>
     </div>
-    <div class="cohort">
-      <img src="/img/cohort5.jpg" alt="">
-      <h5>Cohort 5</h5>
-    </div>
-    <div class="cohort">
-      <img src="/img/cohort5.jpg" alt="">
-      <h5>Cohort 5</h5>
-    </div>
-    <div class="cohort">
-      <img src="/img/cohort5.jpg" alt="">
-      <h5>Cohort 5</h5>
-    </div>
-    <div class="cohort">
-      <img src="/img/cohort5.jpg" alt="">
-      <h5>Cohort 5</h5>
-    </div>
+    {{/each}}
   </section>
 </section>
