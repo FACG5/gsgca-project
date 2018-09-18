@@ -1,0 +1,33 @@
+<section class="content">
+  <section class="com-name">
+    <h3>Community Project</h3>
+    <br>
+  </section>
+  <section>
+    {{#if err}}
+      <h3>{{err}}</h3>
+    {{else}}
+      {{#each res}}
+      <h2>Edit Project</h2>
+      <div class="editDiv">
+        <label for="name"> Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" value="{{name}}" required>
+        <span id="nameError" class="errorValid"></span>
+        <label for="Description"> Description</label>
+        <input type="text" id="description" name="Description" placeholder="Description" value="{{description}}" required>
+        <span id="descriptionError" class="errorValid"></span>
+        <label for="link"> Github Link</label>
+        <input type="text" id="gitLink" name="link" placeholder=" Github Link" value="{{githublink}}" required>
+        <span id="gitError" class="errorValid"></span>
+        <label for="link"> Website Link</label>
+        <input type="text" id="webLink" name="link" placeholder=" Website Link" value="{{websitelink}}" required>
+        <span id="webError" class="errorValid"></span>
+        <label for="Image"> Image</label>
+        <input type="text" id="imgUrl" name="Image" placeholder="Image URL" value="{{imgurl}}" required>
+        <span id="imgError" class="errorValid"></span>
+        <input type="submit" id="editProj" value="Edit Project">
+      </div>
+      {{/each}}
+    {{/if}}
+  </section>
+</section>
