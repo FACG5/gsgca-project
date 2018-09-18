@@ -18,7 +18,9 @@ exports.getCohortData = (req, response, next) => {
 exports.editCohort = (req, response, next) => {
   const data = req.body;
   editCohorts(data)
+
     .then((results) => {
+      
       response.send(JSON.stringify({ err: null, message: 'Edit Successfully!' }));
     })
     .catch((err) => {
