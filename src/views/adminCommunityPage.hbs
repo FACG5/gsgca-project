@@ -1,0 +1,26 @@
+<section class="content">
+  <section class="com-name">
+    <h3>Community Project</h3>
+  </section>
+  {{#if err}}
+    <h3>{{err}}</h3>
+  {{else}}  
+  <section>
+    <table class="tabel">
+      <tr>
+        <th>Name</th>
+        <th>Projects</th>
+      </tr>
+      {{#each res}}
+      <tr id='{{id}}'>
+        <td>{{name}}</td>
+        <td>
+          <a href="/admin/community/{{id}}/projects">
+            View Projects</a>
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+    {{/if}}
+  </section>
+</section>

@@ -1,0 +1,115 @@
+<section class="content">
+  <section class="com-name">
+    <h3>Community Project</h3>
+  </section>
+  <button class="button button2" onclick="addProject()">ADD Project</button>
+  {{#if err}}
+  <h3>{{err}}</h3>
+  {{else}}
+  <br><br>
+  <h3>{{cohortname}}</h3>
+    <table class="tabel">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Github Link</th>
+        <th>Website Link</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View student</th>
+      </tr>
+      {{#each res}}
+      <tr id="{{id}}">
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td><a href="{{githublink}}" target="_blank">click</a></td>
+        <td><a href="{{websitelink}}" target="_blank">click</a></td>
+        <td><a href="{{img_url}}" target="_blank">click</a></td>
+        <td>
+          <a class="edit" href="/admin/community/{{this.cohort_id}}/edit/{{this.id}}">
+            Edit </a>
+        </td>
+        <td>
+          <a class="delete" href="javascript:;" id="{{this.id}}">
+            Delete </a>
+        </td>
+        <td onclick="students()">
+          <a class="student" href="javascript:;">
+            View student </a>
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+    {{/if}}
+  <section class="sectionAddPro" id="addPro">
+    <h2>Add Project</h2>
+    <div class="editDiv">
+      <label for="name"> Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <span id="nameError" class="errorValid"></span>
+      <label for="Description"> Description</label>
+      <input type="text" id="description" name="Description" placeholder="Description" required>
+      <span id="descriptionError" class="errorValid"></span>
+      <label for="link"> Github Link</label>
+      <input type="text" id="gitLink" name="link" placeholder=" Github Link" required>
+      <span id="gitError" class="errorValid"></span>
+      <label for="link"> Website Link</label>
+      <input type="text" id="webLink" name="link" placeholder=" Website Link" required>
+      <span id="webError" class="errorValid"></span>
+      <label for="Image"> Image</label>
+      <input type="text" id="imgUrl" name="Image" placeholder="Image URL" required>
+      <span id="imgError" class="errorValid"></span>
+      <input type="submit" id="addproj" value="ADD Project">
+    </div>
+  </section>
+  <section class="sectionstd" id="student">
+    <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
+    <table class="tabel ">
+      <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr>
+        <td>Ali1</td>
+        <td>
+          <a class="edit" href="javascript:;">
+            Edit </a>
+        </td>
+        <td>
+          <a class="delete" href="javascript:;">
+            Delete </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Ali2</td>
+        <td>
+          <a class="edit" href="javascript:;">
+            Edit </a>
+        </td>
+        <td>
+          <a class="delete" href="javascript:;">
+            Delete </a>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="sectionAddstd" id="addStd">
+    <h2>Add Student</h2>
+    <select class="styled">
+      <option disabled selected>Select Student</option>
+      <option>Student 1</option>
+      <option>Student 2</option>
+      <option>Student 3</option>
+      <option>Student 4</option>
+      <option>Student 5</option>
+      <option>Student 6</option>
+      <option>Student 7</option>
+      <option>Student 8</option>
+      <option>Student 9</option>
+      <option>Student 10</option>
+    </select>
+    <input type="submit" value="ADD">
+  </section>
+</section>
