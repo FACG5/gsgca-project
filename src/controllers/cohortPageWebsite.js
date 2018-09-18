@@ -1,7 +1,7 @@
 exports.get = (request, response) => {
-  response.render('projectPageWebsite', {
+  response.render('cohortPageWebsite', {
     layout: 'webSite',
-    styleFile: 'projectWebsite',
+    styleFile: 'cohortPageWebsite',
     jsFile: 'cohortPageWebsite',
   });
 };
