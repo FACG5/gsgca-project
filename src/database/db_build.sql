@@ -42,7 +42,7 @@ INSERT INTO admin (username,password) values ('admin',
 '$2y$12$yhE8ruRCa7kJ9P8z.CqOEe4A6U1P9E8dfF1S1aRonYn6d9VWjrz1C');
 
 INSERT INTO cohort (name,description,img_url,githublink) values
- ('FACG5','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
+('FACG5','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
 ('FACG2','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
 ('FACG3','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
 ('FACG4','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
