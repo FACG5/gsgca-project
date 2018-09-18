@@ -38,7 +38,7 @@ mySlides {
   color: #757575;
 }
 
-.Join {
+.join {
   justify-self: center;
   font-weight: bold;
   outline: none;
@@ -54,7 +54,7 @@ mySlides {
   transition-duration: 0.3s;
 }
 
-.Join:hover {
+.join:hover {
   background-color: #5f9434;
 }
 
