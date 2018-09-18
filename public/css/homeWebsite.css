@@ -67,7 +67,7 @@ mySlides {
   margin: 0 auto;
 }
 
-.C_project {
+.c_project {
   width: 160px;
   height: 160px;
   justify-self: center;
@@ -78,7 +78,7 @@ mySlides {
   transition-duration: 0.4s;
 }
 
-.C_project:hover {
+.c_project:hover {
   -webkit-box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
   -moz-box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
   box-shadow: 0px 0px 46px 7px rgba(255, 164, 31, 1);
@@ -88,7 +88,7 @@ mySlides {
   margin-top: 45px;
 }
 
-.Community {
+.community {
   font-size: 17px;
   text-align: center;
   font-family: Roboto;
