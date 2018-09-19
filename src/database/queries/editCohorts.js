@@ -2,11 +2,12 @@ const dbconnection = require('../db_connection');
 
 const editCohorts = cohortData => new Promise((resolve, reject) => {
   const {
-    name, description, githubLink, imgUrl, cohortId,
+    name, description, githublink, imgUrl, cohortId,
   } = cohortData;
+  
   const sql = {
     text: 'UPDATE cohort SET name = $1, description = $2, githublink = $3, img_url = $4 WHERE id=$5;',
-    values: [name, description, githubLink, imgUrl, cohortId],
+    values: [name, description, githublink, imgUrl, cohortId],
   };
   dbconnection.query(sql, (err, res) => {
     if (err) {
