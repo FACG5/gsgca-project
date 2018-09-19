@@ -43,16 +43,17 @@ INSERT INTO admin (username,password) values ('admin',
 '$2y$12$yhE8ruRCa7kJ9P8z.CqOEe4A6U1P9E8dfF1S1aRonYn6d9VWjrz1C');
 
 INSERT INTO cohort (name,description,img_url,githublink) values
-('FACG5','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
-('FACG2','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
-('FACG3','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
-('FACG4','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
-('FACG1','description','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5');
+('FACG5','The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies or work as freelance developers','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
+('FACG2','The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies or work as freelance developers','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
+('FACG3','The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies or work as freelance developers','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
+('FACG4','The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies or work as freelance developers','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5'),
+('FACG1','The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies or work as freelance developers','https://avatars3.githubusercontent.com/u/37267782?s=200&v=4','https://github.com/FACG5');
 
 INSERT INTO student (name,username,githublink,img_url,cohort_id) values
 ('Lubna Abd','lubnaabd','https://github.com/lubnaabd','https://avatars1.githubusercontent.com/u/26024284?s=460&v=4',1),
 ('Ibrahem Ali','HemaSAli','https://github.com/hemasali','https://avatars3.githubusercontent.com/u/34215823?s=460&v=4',1),
 ('Ali Haj Ahmed ','ali-7','https://github.com/ali-7','https://avatars0.githubusercontent.com/u/36124895?s=460&v=4',1),
+('Asmaa Al-Madhoun','Asmaa-ezz','https://github.com/Asmaa-ezz','https://avatars3.githubusercontent.com/u/38081411?s=460&v=4',1),
 ('Lubna Abd','lubnaabd','https://github.com/lubnaabd','https://avatars1.githubusercontent.com/u/26024284?s=460&v=4',2),
 ('Ibrahem Ali','HemaSAli','https://github.com/hemasali','https://avatars3.githubusercontent.com/u/34215823?s=460&v=4',2),
 ('Ali Haj Ahmed ','ali-7','https://github.com/ali-7','https://avatars0.githubusercontent.com/u/36124895?s=460&v=4',3),
@@ -69,6 +70,11 @@ INSERT INTO project (name,description,githublink,websitelink,img_url,project_typ
 
 INSERT INTO std_project (std_id,project_id) values 
 (1,1),
-(1,2);
+(1,2),
+(2,1),
+(3,2),
+(3,3);
+
+
 
 COMMIT;

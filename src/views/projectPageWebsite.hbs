@@ -2,35 +2,29 @@
   <img class="imageClient" src="/img/besart-bootcamp.jpg">
 </section>
 <section class="section-2">
-  <h1 class="textmain">Project Name
+  <h1 class="textmain">{{res.projectResult.0.name}}
   </h1>
-  <p class="description">The Code Academy is Palestine’s first full-stack coding bootcamp with a flagship campus in Gaza and second campus opening
-    in the West Bank in November 2018. The Code Academy is a joint project of Mercy Corps/Gaza Sky Geeks and Founders & Coders
-    International. We train 16 students per cohort in a full-time, intensive course for 8 weeks with an additional 16 weeks
-    of project-based learning with real-world clients to jumpstart your professional portfolio. The objective is to graduate
-    as full-stack developers who can deploy production-grade software online and secure high-quality jobs with companies
-    or work as freelance developers.</p>
+  <p class="description">{{res.projectResult.0.description}}</p>
   <hr>
 </section>
 <section class="section-2">
   <h1 class="textmain">Project Information
   </h1>
   <ul class="information-ui">
-    <li>
-      FACG 1
-    </li>
-    <li>
-      Link On Github </li>
-    <li>
-      Website Link
-    </li>
+    <li> {{res.projectResult.0.cohort_name}} </li>
+    <li><a target="_blank" href="{{res.projectResult.0.githublink}}">{{res.projectResult.0.githublink}}</a> </li>
+    <li><a target="_blank" href="{{res.projectResult.0.websitelink}}">{{res.projectResult.0.websitelink}}</a> </li>
     <li>
       students
       <ul class="sutdentsUl">
-        <li> Student name</li>
-        <li> Student name</li>
-        <li> Student name</li>
+        {{#if res.projectStudentsResult.length}}
+          {{#each res.projectStudentsResult}}
+           <li><a target="_blank" href="{{github_link}}"> {{student_name}}</a></li>
+          {{/each}}
+        {{else}}
+          <h3>There are No Student !</h3>
+        {{/if}}
       </ul>
     </li>
   </ul>
-</section>
+ </section>
