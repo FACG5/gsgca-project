@@ -10,7 +10,7 @@ exports.post = (request, response) => {
   const { usernameValue } = request.body;
   const { passwordValue } = request.body;
   loginQuery(usernameValue, (error, result) => {
-    if (error) return response.send(JSON.stringify({ err: 'Login_error !' }));
+    if (error) return response.send(JSON.stringify({ err: 'UserName Not Found !' }));
     if (result[0]) {
       return bcrypt.compare(passwordValue, result[0].password, (err, res) => {
         if (err) return response.send(JSON.stringify({ err: 'Error!' }));

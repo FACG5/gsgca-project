@@ -4,6 +4,5 @@ exports.get = (request, response) => {
     clientProjects: 'active',
     styleFile: 'projectWebsite',
     title: 'Code Academy | Clients Projects',
-
   });
 };

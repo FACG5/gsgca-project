@@ -45,6 +45,7 @@ exports.editPage = (request, response) =>{
         jsFile: ['editStudent'],
         layout: 'adminLayout',
         results,
+        cohort: 'active',
       });
     })
     .catch((err) => {

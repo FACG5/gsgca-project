@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+.active{
+  background-color: #2196f3;
+  color: #fff;
+}
+
 body {
   font-family: Roboto;
   font-weight: bold;
@@ -69,16 +74,11 @@ ul {
   grid-area: content;
   position: relative;
   background-color: #fff;
-  padding-top: 8%;
-  padding-left: 1%;
+  padding: 4rem 1rem 2rem 18rem
 }
 
 .wrapper {
   width: 100%;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 0.75fr 2fr 1fr;
-  grid-template-areas: "sidebar content content content";
   background-color: #fff;
   color: #444;
   margin-bottom: 50px;
@@ -177,11 +177,18 @@ ul {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  
-}
+ }
 
+ .errorValid{
+   color: red
+ }
 button{
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 4rem 0rem 2rem 4rem;
 }
 
 @media screen and (max-width: 634px) {
@@ -194,11 +201,7 @@ button{
   ul {
     margin-top: 90%;
   }
-  .content {
-    padding-top: 30%;
-    padding-right: 0%;
-    padding-left: 0%;
-  }
+
   .static {
     font-size: 16px;
   }
@@ -208,10 +211,4 @@ button{
     padding: 2.1%;
   }
 }
-@media screen and (min-width: 635px) and (max-width: 770px) {
-  .content {
-    padding-top: 10%;
-    padding-right: 0%;
-    padding-left: 0%;
-  }
-}
+

@@ -20,6 +20,10 @@ body {
   grid-template-columns: 2fr 1fr;
 }
 
+.main{
+  margin: 0 auto;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -187,9 +191,8 @@ h5{
   font-weight: bold;
 }
 
-.icon:hover {
-  border: 1.5px solid #fff;
-  border-radius: 50%;
+.icon {
+  padding-right: 0.5rem;
 }
 
 .icons img{
