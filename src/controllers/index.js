@@ -45,6 +45,8 @@ router.get('/admin/community', authCheck, adminCommunityPage.get);
 router.get('/admin/community/:cohortId/projects', authCheck, adminCommunityPage.getProjects);
 router.post('/admin/community/:cohortId/newProject', authCheck, projects.post);
 router.delete('/admin/community/:cohortId/deleteProject', authCheck, projects.delete);
+router.get('/admin/community/:cohortId/edit/:projectId', authCheck, projects.getProject);
+router.post('/admin/community/:cohortId/edit/:projectId', authCheck, projects.edit);
 
 router.use(error.client);
 router.use(error.server);
