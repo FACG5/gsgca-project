@@ -152,6 +152,17 @@ h5{
   -ms-transform: translate(-50%, 0%);
 }
 
+.errMessage{
+  text-align: left;
+  font-family: lato;
+  color: #389dbf;
+  font-size: 28px;
+  line-height: 43px;
+  letter-spacing: 5%;
+  font-weight: bold;
+  margin : 0 auto;
+}
+
 .img-footer {
   width: 100%;
   -webkit-box-shadow: 0px -4px 11px -2px rgba(170, 170, 170, 1);
