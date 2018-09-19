@@ -60,10 +60,10 @@ editCohort.addEventListener('click', () => {
     const cohortId = splitUrl[splitUrl.length - 1];
     const name = names.value;
     const description = descriptions.value;
-    const githublink = githubLinks.value;
+    const githubLink = githubLinks.value;
     const imgUrl = imgURls.value;
     const data = {
-      name, description, githublink, imgUrl, cohortId,
+      name, description, githubLink, imgUrl, cohortId,
     };
     fetch(`/admin/cohorts/edit/${cohortId}`, {
       method: 'POST',

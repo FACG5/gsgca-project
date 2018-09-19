@@ -14,3 +14,5 @@ $(document).on('ready', () => {
     ],
   });
 });
+
+// /projects/{{id}}/cohort/{{cohort_id}}

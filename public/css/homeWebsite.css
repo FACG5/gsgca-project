@@ -1,9 +1,9 @@
-mySlides {
+.mySlides {
   box-shadow: 0px 0px 10px 0px #aaaaaa;
   width: 100%;
-  -webkit-animation: fadein 1s; 
+  -webkit-animation: fadein 1s;
   -moz-animation: fadein 1s;
-  -ms-animation: fadein 1s; 
+  -ms-animation: fadein 1s;
   -o-animation: fadein 1s;
   animation: fadein 1s;
 }
@@ -38,6 +38,10 @@ mySlides {
   color: #757575;
 }
 
+.joinCode {
+  justify-self: center;
+}
+
 .join {
   justify-self: center;
   font-weight: bold;
@@ -62,7 +66,7 @@ mySlides {
   text-align: center;
   display: grid;
   width: 80%;
-  grid-template-columns:   repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20%;
   margin: 0 auto;
 }
@@ -97,4 +101,3 @@ mySlides {
   letter-spacing: 1px;
   font-weight: bold;
 }
-
