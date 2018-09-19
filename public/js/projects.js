@@ -29,15 +29,30 @@ const addStudents = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
 
-name.addEventListener('focusout', checkName);
-description.addEventListener('focusout', checkDescription);
-gitLink.addEventListener('focusout', checkGitLink);
-webLink.addEventListener('focusout', checkWebLink);
-imgUrl.addEventListener('focusout', checkImage);
+name.addEventListener('focusout', (e) => {
+  check(name, nameError, 'name is required');
+});
+webLink.addEventListener('focusout', (e) => {
+  check(webLink, webError, 'Web Link is required');
+});
+gitLink.addEventListener('focusout', (e) => {
+  check(gitLink, gitError, 'Github Link is required');
+});
+description.addEventListener('focusout', (e) => {
+  check(description, descriptionError, 'Description is required');
+});
+imgUrl.addEventListener('focusout', (e) => {
+  check(imgUrl, imgError, 'Image url is required');
+});
 
 addProjectButton.addEventListener('click', (e) => {
   e.preventDefault();
-  if (checkName() && checkDescription() && checkGitLink() && checkWebLink() && checkImage()) {
+  const checkName = check(name, nameError, 'name is required');
+  const checkDescription = check(description, descriptionError, 'Description is required');
+  const checkGitLink = check(gitLink, gitError, 'Github Link is required');
+  const checkWebLink = check(webLink, webError, 'Web Link is required');
+  const checkImage = check(imgUrl, imgError, 'Image url is required');
+  if (checkName && checkDescription && checkGitLink && checkWebLink && checkImage) {
     const nameVal = name.value;
     const descriptionVal = description.value;
     const webLinkVal = webLink.value;
