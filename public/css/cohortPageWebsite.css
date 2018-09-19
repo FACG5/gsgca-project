@@ -212,17 +212,18 @@ hr {
   .next {
     display: none !important;
   }
+  
   .facInfo{
     height: 300px;
     overflow: hidden;
   }
 
-.info {
-  padding: 4px;
-  display: grid;
-  grid-template-columns:1fr;
-  grid-gap: 10px;
-  width: 90%;
-  margin: 0 auto;
-}
+  .info {
+    padding: 4px;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
