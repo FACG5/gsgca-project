@@ -36,9 +36,9 @@ exports.getProjects = (request, response) => {
       });
     }
     let projectResult = '';
-    if (projectsType === 'Community' || projectsType === 'community') {
+    if (projectsType.toLowerCase() === 'community') {
       projectResult = res.filter(project => project.project_type === 1);
-    } else if (projectsType === 'Clients' || projectsType === 'clients') {
+    } else if (projectsType.toLowerCase() === 'clients') {
       projectResult = res.filter(project => project.project_type === 0);
     }
     if (projectResult.length === 0) {

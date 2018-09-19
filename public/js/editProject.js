@@ -13,6 +13,14 @@ const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortId = splitUrl[splitUrl.length - 3];
 const projectId = splitUrl[splitUrl.length - 1];
+const projectType = splitUrl[splitUrl.length - 4];
+let projectTypeValue = '';
+if (projectType.toLowerCase() === 'clients') {
+  projectTypeValue = 0;
+} else if (projectType.toLowerCase() === 'community') {
+  projectTypeValue = 1;
+}
+
 
 name.addEventListener('focusout', (e) => {
   check(name, nameError, 'name is required');
@@ -52,6 +60,7 @@ editProjrojectButton.addEventListener('click', (e) => {
       imgUrlVal,
       cohortId,
       projectId,
+      projectTypeValue,
     };
 
     fetch(`/admin/community/${cohortId}/edit/${projectId}`, {
@@ -62,7 +71,7 @@ editProjrojectButton.addEventListener('click', (e) => {
     })
       .then((response) => { response.json(); })
       .then((response) => {
-        swal('Good job!', 'Add Successfully!', 'success').then((value) => {
+        swal('Good job!', 'Edited Successfully!', 'success').then((value) => {
           window.location = `/admin/community/${cohortId}/projects`;
           JSON.stringify(response);
         });
