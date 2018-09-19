@@ -11,9 +11,12 @@ exports.get = (request, response) => {
         jsFile: 'cohortPageWebsite',
       });
     }
-
+    const communityProjects = res.projectResults.filter(project => project.project_type === 1);
+    const clientsProjects = res.projectResults.filter(project => project.project_type === 0);    
     return response.render('cohortPageWebsite', {
       res,
+      communityProjects,
+      clientsProjects,
       layout: 'webSite',
       styleFile: 'cohortPageWebsite',
       jsFile: 'cohortPageWebsite',

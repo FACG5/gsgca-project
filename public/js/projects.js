@@ -83,7 +83,7 @@ addProjectButton.addEventListener('click', (e) => {
       .then((response) => { response.json(); })
       .then((response) => {
         swal('Good job!', 'Add Successfully!', 'success').then((value) => {
-          window.location = `/admin/community/${cohortId}/projects`;
+          window.location = `/admin/${projectType}/${cohortId}/projects`;
           JSON.stringify(response);
         });
       })

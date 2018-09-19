@@ -2,8 +2,7 @@ const express = require('express');
 
 const home = require('./webSiteHome');
 const cohortWebsite = require('./cohortWebsite');
-const clientProjectsWebsite = require('./clientWebsite');
-const communityProjectsWebsite = require('./communityWebsite');
+const projectsPage = require('./projectsPage');
 const projectPageWebsite = require('./projectPageWebsite');
 const cohortPageWebsite = require('./cohortPageWebsite');
 const login = require('./login');
@@ -20,9 +19,8 @@ const router = express.Router();
 
 router.get('/', home.get);
 router.get('/cohort', cohortWebsite.get);
-router.get('/clientProjects', clientProjectsWebsite.get);
-router.get('/communityProjects', communityProjectsWebsite.get);
-router.get('/projects/:id', projectPageWebsite.get);
+router.get('/projects/:projectsType', projectsPage.get);
+router.get('/project/:id', projectPageWebsite.get);
 router.get('/cohortPageWebsite/:id', cohortPageWebsite.get);
 
 router.get('/admin/login', login.get);
