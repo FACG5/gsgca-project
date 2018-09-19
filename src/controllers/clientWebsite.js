@@ -3,5 +3,7 @@ exports.get = (request, response) => {
     layout: 'webSite',
     clientProjects: 'active',
     styleFile: 'projectWebsite',
+    title: 'Code Academy | Clients Projects',
+
   });
 };

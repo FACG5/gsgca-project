@@ -177,7 +177,13 @@ ul {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+  
 }
+
+button{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 634px) {
   .menu {
     display: none;

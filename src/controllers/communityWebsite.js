@@ -3,5 +3,6 @@ exports.get = (request, response) => {
     layout: 'webSite',
     communityProjects: 'active',
     styleFile: 'projectWebsite',
+    title: 'Code Academy | Community Projects',
   });
 };

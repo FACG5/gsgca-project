@@ -17,6 +17,7 @@ exports.get = (request, response) => {
       layout: 'webSite',
       styleFile: 'cohortPageWebsite',
       jsFile: 'cohortPageWebsite',
+      title: 'Code Academy | Cohort Name',
     });
   });
 };

@@ -1,11 +1,4 @@
-.section2 {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 10px;
-  width: 75%;
-  margin: 0 auto;
-}
+
 .textmain {
   text-align: center;
   font-family: lato;
@@ -27,7 +20,7 @@
   color: #757575;
 }
 
-.client_project {
+.client-project {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
@@ -35,7 +28,7 @@
   width: 80%;
 }
 
-.client_project > div {
+.client-project > div {
   text-align: center;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
@@ -78,4 +71,92 @@ h5 {
 .sutdentsUl {
   margin-left: 2px;
   list-style: decimal;
+}
+
+.imageClient{
+  width: 100%;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 0;
+}
+.w3-display-bottommiddle2 {
+  position: absolute;
+  left: 50%;
+  bottom: 173px;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+}
+
+.section-2 {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.textmain {
+  text-align: left;
+  font-family: lato;
+  color: #389dbf;
+  font-size: 28px;
+  line-height: 43px;
+  letter-spacing: 5%;
+  font-weight: bold;
+}
+.description {
+  text-align: justify;
+
+  overflow: hidden;
+  /* height: 150px; */
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Roboto;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: #757575;
+}
+.client-project{
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
+  grid-gap: 20px;
+  margin:0 auto; 
+   width: 80%;
+  
+  
+}
+.client-project>div{
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.75);
+border-radius: 5px;
+color: #757575;
+
+}
+.projectImg{
+  border-radius: 5px;
+
+  max-width: 100%;
+}
+
+.information-ui{
+
+  margin-left: 2rem;
+  font-weight: bold;
+  color: #757575;
+  margin-bottom: 3rem;
+  
+}
+.informationUl>li{
+    margin-bottom: 1%;
+}
+
+.sutdentsUl{
+    margin-left: 5%;
+    list-style: decimal; 
 }
