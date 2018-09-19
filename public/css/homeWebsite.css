@@ -52,6 +52,7 @@ mySlides {
   letter-spacing: 1px;
   border: none;
   transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .join:hover {
