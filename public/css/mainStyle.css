@@ -186,9 +186,16 @@ button{
   cursor: pointer;
 }
 
+.homePageTitle {
+  color: red;
+  padding-top: 1rem;
+  font-size: 1.8rem;
+}
+
 @media (max-width: 1024px) {
   .content {
     padding: 4rem 0rem 2rem 4rem;
+  }
 }
 
 @media screen and (max-width: 634px) {
