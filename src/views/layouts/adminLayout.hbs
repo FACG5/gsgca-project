@@ -9,8 +9,10 @@
             {{>adminPanel/adminSidebar}} {{{body}}}
         </main>
         {{>adminPanel/adminFooter}}
-        <script src="/js/admin.js"></script> {{#if jsFile}}
-        <script src="/js/{{jsFile}}.js"></script> {{/if}}
+        <script src="/js/admin.js"></script> 
+        {{#if jsFile}}
+            <script src="/js/{{jsFile}}.js"></script> 
+        {{/if}}
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
     </html>

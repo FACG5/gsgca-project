@@ -14,53 +14,26 @@ const addCohort = () => {
   addCoh.classList.toggle('sectionAddcoh--visible');
 };
 
-const displayErr = (errElem, errMsg) => {
-  errElem.textContent = errMsg;
-};
-
-const checkName = () => {
-  if (!names.value) {
-    displayErr(nameerror, 'name Cohort is required');
-  } else {
-    displayErr(nameerror, '');
-    return true;
-  }
-};
-
-const checkDescriptions = () => {
-  if (!descriptions.value) {
-    displayErr(deserror, 'Description Cohort is required');
-  } else {
-    displayErr(deserror, '');
-    return true;
-  }
-};
-
-const checkGithublink = () => {
-  if (!githublinks.value) {
-    displayErr(giterror, 'Github Link Cohort is required');
-  } else {
-    displayErr(giterror, '');
-    return true;
-  }
-};
-
-const checkImage = () => {
-  if (!imgURls.value) {
-    displayErr(imgerror, 'Image Cohort is required');
-  } else {
-    displayErr(imgerror, '');
-    return true;
-  }
-};
-
-names.addEventListener('focusout', checkName);
-descriptions.addEventListener('focusout', checkDescriptions);
-githublinks.addEventListener('focusout', checkGithublink);
-imgURls.addEventListener('focusout', checkImage);
+names.addEventListener('focusout', (e) => {
+  check(names, nameerror, 'name Cohort is required');
+});
+descriptions.addEventListener('focusout', (e) => {
+  check(descriptions, deserror, 'Description Cohort is required');
+});
+githublinks.addEventListener('focusout', (e) => {
+  check(githublinks, giterror, 'Github Link Cohort is required');
+});
+imgURls.addEventListener('focusout', (e) => {
+  check(imgURls, imgerror, 'Image Cohort is required');
+});
 
 addCohorts.addEventListener('click', (e) => {
-  if (checkName() && checkDescriptions() && checkGithublink() && checkImage()) {
+  const checkname = check(names, nameerror, 'name Cohort is required');
+  const checkDescription = check(descriptions, deserror, 'Description Cohort is required');
+  const checkgitLink = check(githublinks, giterror, 'Github Link Cohort is required');
+  const checkImg = check(imgURls, imgerror, 'Image Cohort is required');
+
+  if (checkname && checkDescription && checkgitLink && checkImg) {
     const name = names.value;
     const description = descriptions.value;
     const githublink = githublinks.value;
@@ -95,5 +68,5 @@ deleteCohortsArray.forEach((button) => {
   };
   const route = '/admin/cohorts';
   const routeToRedirect = '/admin/cohorts';
-deleteButtonFunction(button, route, routeToRedirect, data);
+  deleteButtonFunction(button, route, routeToRedirect, data);
 });
