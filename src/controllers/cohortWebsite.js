@@ -15,6 +15,7 @@ exports.get = (request, response) => {
       cohortPage: 'active',
       layout: 'webSite',
       styleFile: 'cohortWebsite',
+      title: 'Code Academy | Cohorts',
     });
   });
 };
