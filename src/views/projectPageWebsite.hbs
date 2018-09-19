@@ -12,14 +12,14 @@
   </h1>
   <ul class="information-ui">
     <li> {{res.projectResult.0.cohort_name}} </li>
-    <li><a href="{{res.projectResult.0.githublink}}">{{res.projectResult.0.githublink}}</a> </li>
-    <li><a href="{{res.projectResult.0.websitelink}}">{{res.projectResult.0.websitelink}}</a> </li>
+    <li><a target="_blank" href="{{res.projectResult.0.githublink}}">{{res.projectResult.0.githublink}}</a> </li>
+    <li><a target="_blank" href="{{res.projectResult.0.websitelink}}">{{res.projectResult.0.websitelink}}</a> </li>
     <li>
       students
       <ul class="sutdentsUl">
         {{#if res.projectStudentsResult.length}}
           {{#each res.projectStudentsResult}}
-           <li><a href="{{github_link}}"> {{student_name}}</a></li>
+           <li><a target="_blank" href="{{github_link}}"> {{student_name}}</a></li>
           {{/each}}
         {{else}}
           <h3>There are No Student !</h3>
