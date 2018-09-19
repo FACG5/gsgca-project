@@ -36,8 +36,8 @@ addCohorts.addEventListener('click', (e) => {
   if (checkname && checkDescription && checkgitLink && checkImg) {
     const name = names.value;
     const description = descriptions.value;
-    const githublink = githublinks.value;
-    const imgURl = imgURls.value;
+    const githublink = addhttps(githublinks.value);
+    const imgURl = addhttps(imgURls.value);
     const data = {
       name,
       description,

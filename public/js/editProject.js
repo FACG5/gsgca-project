@@ -48,9 +48,9 @@ editProjrojectButton.addEventListener('click', (e) => {
   if (checkName && checkDescription && checkGitLink && checkWebLink && checkImage) {
     const nameVal = name.value;
     const descriptionVal = description.value;
-    const webLinkVal = webLink.value;
-    const gitLinkVal = gitLink.value;
-    const imgUrlVal = imgUrl.value;
+    const webLinkVal = addhttps(webLink.value);
+    const gitLinkVal = addhttps(gitLink.value);
+    const imgUrlVal = addhttps(imgUrl.value);
 
     const newProject = {
       nameVal,

@@ -33,8 +33,8 @@ editCohort.addEventListener('click', () => {
     const cohortId = splitUrl[splitUrl.length - 1];
     const name = names.value;
     const description = descriptions.value;
-    const githubLink = githubLinks.value;
-    const imgUrl = imgURls.value;
+    const githubLink = addhttps(githubLinks.value);
+    const imgUrl = addhttps(imgURls.value);
     const data = {
       name, description, githubLink, imgUrl, cohortId,
     };

@@ -73,13 +73,21 @@ const check = (input, errorMessageElement, errMessage) => {
     return true;
   }
 };
-const urlCheck = (input, errorMessageElement, errMessage) => {  
-  if (!input.value) {
+const urlCheck = (input, errorMessageElement, errMessage) => {
+  const inputValue = input.value;
+  if (!inputValue) {
     displayErr(errorMessageElement, errMessage);
-  } else if (input.value.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g) === null) {
+  } else if (inputValue.toLowerCase().match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g) === null) {
     displayErr(errorMessageElement, 'Not Valid Url !');
   } else {
     displayErr(errorMessageElement, '');
     return true;
   }
+};
+const addhttps = (url) => {
+  let prefix = 'https://';
+  if (url.substr(0, prefix.length) !== prefix) {
+    url = prefix + url;
+  }
+  return url;
 };
