@@ -8,53 +8,26 @@ const descriptionsError = document.getElementById('deserror');
 const githubError = document.getElementById('giterror');
 const imgError = document.getElementById('imgerror');
 
-const displayErr = (errElem, errMsg) => {
-  errElem.textContent = errMsg;
-};
-
-const checkName = () => {
-  if (!names.value) {
-    displayErr(nameError, 'name Cohort is required');
-  } else {
-    displayErr(nameError, '');
-    return true;
-  }
-};
-
-const checkDescriptions = () => {
-  if (!descriptions.value) {
-    displayErr(descriptionsError, 'Description Cohort is required');
-  } else {
-    displayErr(descriptionsError, '');
-    return true;
-  }
-};
-
-const checkGithublink = () => {
-  if (!githubLinks.value) {
-    displayErr(githubError, 'Github Link Cohort is required');
-  } else {
-    displayErr(githubError, '');
-    return true;
-  }
-};
-
-const checkImage = () => {
-  if (!imgURls.value) {
-    displayErr(imgError, 'Image Cohort is required');
-  } else {
-    displayErr(imgError, '');
-    return true;
-  }
-};
-
-names.addEventListener('focusout', checkName);
-descriptions.addEventListener('focusout', checkDescriptions);
-githubLinks.addEventListener('focusout', checkGithublink);
-imgURls.addEventListener('focusout', checkImage);
+names.addEventListener('focusout', (e) => {
+  check(names, nameError, 'name Cohort is required');
+});
+descriptions.addEventListener('focusout', (e) => {
+  check(descriptions, descriptionsError, 'Description Cohort is required');
+});
+githubLinks.addEventListener('focusout', (e) => {
+  check(githubLinks, githubError, 'Github Link Cohort is required');
+});
+imgURls.addEventListener('focusout', (e) => {
+  check(imgURls, imgError, 'Image Cohort is required');
+});
 
 editCohort.addEventListener('click', () => {
-  if (checkName() && checkDescriptions() && checkGithublink() && checkImage()) {
+  const checkname = check(names, nameError, 'name Cohort is required');
+  const checkDescription = check(descriptions, descriptionsError, 'Description Cohort is required');
+  const checkgitLink = check(githubLinks, githubError, 'Github Link Cohort is required');
+  const checkImg = check(imgURls, imgError, 'Image Cohort is required');
+
+  if (checkname && checkDescription && checkgitLink && checkImg) {
     const URL = window.location.href;
     const splitUrl = URL.split('/');
     const cohortId = splitUrl[splitUrl.length - 1];
