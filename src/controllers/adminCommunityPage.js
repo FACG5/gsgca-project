@@ -10,6 +10,7 @@ exports.get = (request, response) => {
         jsFile: 'projects',
         layout: 'adminLayout',
         title: 'Admin Panel | Community Projects',
+        project: 'active',
       });
     }
     return response.render('adminCommunityPage', {
@@ -18,6 +19,7 @@ exports.get = (request, response) => {
       jsFile: 'projects',
       layout: 'adminLayout',
       title: 'Admin Panel | Community Projects',
+      project: 'active',
     });
   });
 };
@@ -31,6 +33,7 @@ exports.getProjects = (request, response) => {
         jsFile: 'projects',
         layout: 'adminLayout',
         title: 'Admin Panel | Community Projects',
+        project: 'active',
       });
     }
     if (res.length === 0) {
@@ -40,6 +43,7 @@ exports.getProjects = (request, response) => {
         jsFile: 'projects',
         layout: 'adminLayout',
         title: 'Admin Panel | Community Projects',
+        project: 'active',
       });
     }
     return response.render('communityProjects', {
@@ -49,6 +53,7 @@ exports.getProjects = (request, response) => {
       jsFile: 'projects',
       layout: 'adminLayout',
       title: 'Admin Panel | Community Projects',
+      project: 'active',
     });
   });
 };
