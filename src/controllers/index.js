@@ -13,7 +13,7 @@ const cohorts = require('./cohorts');
 const editcohort = require('./editCohort');
 const students = require('./students');
 const { authCheck } = require('./middleware');
-const adminCommunityPage = require('./adminCommunityPage');
+const adminProjectsPage = require('./adminProjectsPage');
 const projects = require('./projects');
 
 const router = express.Router();
@@ -41,12 +41,12 @@ router.post('/admin/cohorts/:cohortId/newStudent', authCheck, students.post);
 router.delete('/admin/cohorts/:cohortId/deleteStudent', authCheck, students.delete);
 router.put('/admin/cohorts/:cohortId/editStudent/:id', authCheck, students.put);
 router.get('/admin/cohorts/:cohortId/editStudent/:id', authCheck, students.editPage);
-router.get('/admin/community', authCheck, adminCommunityPage.get);
-router.get('/admin/community/:cohortId/projects', authCheck, adminCommunityPage.getProjects);
-router.post('/admin/community/:cohortId/newProject', authCheck, projects.post);
-router.delete('/admin/community/:cohortId/deleteProject', authCheck, projects.delete);
-router.get('/admin/community/:cohortId/edit/:projectId', authCheck, projects.getProject);
-router.post('/admin/community/:cohortId/edit/:projectId', authCheck, projects.edit);
+router.get('/admin/:projectsType', authCheck, adminProjectsPage.get);
+router.get('/admin/:projectsType/:cohortId/projects', authCheck, adminProjectsPage.getProjects);
+router.post('/admin/:projectsType/:cohortId/newProject', authCheck, projects.post);
+router.delete('/admin/:projectsType/:cohortId/deleteProject', authCheck, projects.delete);
+router.get('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.getProject);
+router.post('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.edit);
 
 router.use(error.client);
 router.use(error.server);
