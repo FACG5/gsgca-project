@@ -20,7 +20,7 @@
   color: #757575;
 }
 
-.client_project {
+.client-project {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
@@ -28,7 +28,7 @@
   width: 80%;
 }
 
-.client_project > div {
+.client-project > div {
   text-align: center;
   -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
@@ -119,7 +119,7 @@ h4 {
   letter-spacing: 1px;
   color: #757575;
 }
-.client_project{
+.client-project{
 
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); 
@@ -129,7 +129,7 @@ h4 {
   
   
 }
-.client_project>div{
+.client-project>div{
   text-align: center;
   -webkit-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.75);

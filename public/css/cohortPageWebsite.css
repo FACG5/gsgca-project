@@ -109,7 +109,7 @@ h5 {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 10px;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -210,6 +210,9 @@ hr {
 
   .next {
     display: none !important;
+  }
+  .info{
+    grid-template-columns: 1fr;
   }
 
 }
