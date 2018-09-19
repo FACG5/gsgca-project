@@ -15,6 +15,7 @@ const addProjectButton = document.getElementById('addproj');
 const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortId = splitUrl[splitUrl.length - 2];
+const deleteProjectButton = document.querySelectorAll('.delete');
 
 const students = () => {
   student.classList.toggle('sectionstd--visible');
@@ -27,6 +28,12 @@ const addProject = () => {
 const addStudents = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
+
+name.addEventListener('focusout', checkName);
+description.addEventListener('focusout', checkDescription);
+gitLink.addEventListener('focusout', checkGitLink);
+webLink.addEventListener('focusout', checkWebLink);
+imgUrl.addEventListener('focusout', checkImage);
 
 addProjectButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -61,4 +68,10 @@ addProjectButton.addEventListener('click', (e) => {
       })
       .catch(error => swal(error, 'error', 'error'));
   }
+});
+deleteProjectButton.forEach((button) => {
+  const deleteProjectData = { projectId: button.id, cohortId };
+  const route = `/admin/community/${cohortId}/deleteProject`;
+  const routeToRedirect = `/admin/community/${cohortId}/projects`;
+  deleteButtonFunction(button, route, routeToRedirect, deleteProjectData);
 });

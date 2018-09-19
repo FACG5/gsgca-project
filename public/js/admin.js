@@ -10,7 +10,7 @@ const deleteButtonFunction = (button, route, redirectLocation, dataOfDelete) => 
     swal({
       title: 'Are you sure ?',
       text:
-        'Once deleted, you will not be able to recover this imaginary file!',
+        'Once deleted, you will not be able to recover this!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
