@@ -1,6 +1,6 @@
 <section class="content">
   <section class="com-name">
-    <h3>Community Project</h3>
+    <h3>{{projectsType}} Projects</h3>
   </section>
   <button class="button button2" onclick="addProject()">ADD Project</button>
   {{#if err}}
@@ -19,7 +19,7 @@
         <th>Delete</th>
         <th>View student</th>
       </tr>
-      {{#each res}}
+      {{#each projectResult}}
       <tr id="{{id}}">
         <td>{{name}}</td>
         <td>{{description}}</td>
@@ -27,7 +27,7 @@
         <td><a href="{{websitelink}}" target="_blank">click</a></td>
         <td><a href="{{img_url}}" target="_blank">click</a></td>
         <td>
-          <a class="edit" href="/admin/community/{{this.cohort_id}}/edit/{{this.id}}">
+          <a class="edit" href="/admin/{{../projectsType}}/{{this.cohort_id}}/edit/{{this.id}}">
             Edit </a>
         </td>
         <td>

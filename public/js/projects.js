@@ -16,6 +16,13 @@ const URL = window.location.href;
 const splitUrl = URL.split('/');
 const cohortId = splitUrl[splitUrl.length - 2];
 const deleteProjectButton = document.querySelectorAll('.delete');
+const projectType = splitUrl[splitUrl.length - 3];
+let projectTypeValue = '';
+if (projectType.toLowerCase() === 'clients') {
+  projectTypeValue = 0;
+} else if (projectType.toLowerCase() === 'community') {
+  projectTypeValue = 1;
+}
 
 const students = () => {
   student.classList.toggle('sectionstd--visible');
@@ -58,7 +65,6 @@ addProjectButton.addEventListener('click', (e) => {
     const webLinkVal = webLink.value;
     const gitLinkVal = gitLink.value;
     const imgUrlVal = imgUrl.value;
-
     const newProject = {
       nameVal,
       descriptionVal,
@@ -66,8 +72,8 @@ addProjectButton.addEventListener('click', (e) => {
       gitLinkVal,
       imgUrlVal,
       cohortId,
+      projectTypeValue,
     };
-
     fetch(`/admin/community/${cohortId}/newProject`, {
       method: 'POST',
       credentials: 'same-origin',
@@ -85,8 +91,8 @@ addProjectButton.addEventListener('click', (e) => {
   }
 });
 deleteProjectButton.forEach((button) => {
-  const deleteProjectData = { projectId: button.id, cohortId };
+  const deleteProjectData = { projectId: button.id, cohortId, projectTypeValue };
   const route = `/admin/community/${cohortId}/deleteProject`;
-  const routeToRedirect = `/admin/community/${cohortId}/projects`;
+  const routeToRedirect = `/admin/${projectType}/${cohortId}/projects`;
   deleteButtonFunction(button, route, routeToRedirect, deleteProjectData);
 });

@@ -1,6 +1,6 @@
 <section class="content">
   <section class="com-name">
-    <h3>Community Project</h3>
+    <h3>{{projectsType}} Projects</h3>
   </section>
   {{#if err}}
     <h3>{{err}}</h3>
@@ -12,10 +12,10 @@
         <th>Projects</th>
       </tr>
       {{#each res}}
-      <tr id='{{id}}'>
+      <tr id={{id}}>
         <td>{{name}}</td>
         <td>
-          <a href="/admin/community/{{id}}/projects">
+          <a href="/admin/{{../projectsType}}/{{this.id}}/projects">
             View Projects</a>
         </td>
       </tr>
