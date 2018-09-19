@@ -154,14 +154,13 @@ h5{
 }
 
 .errMessage{
-  text-align: left;
+  text-align: center;
   font-family: lato;
-  color: #389dbf;
-  font-size: 28px;
+  color: #1b1c1d;
+  font-size: 25px;
   line-height: 43px;
   letter-spacing: 5%;
   font-weight: bold;
-  margin : 0 auto;
 }
 
 .img-footer {

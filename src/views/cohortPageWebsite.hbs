@@ -17,47 +17,43 @@
 <hr>
 <section class="phase">
   <h1>Community Phase Projects</h1>
-  {{#if res.projectResults.length }}
+  {{#if communityProjects.length}}
     <div class="proj">
-      {{#each res.projectResults}}
-       <a href="/projects/{{id}}">
+      {{#each communityProjects}}
+       <a href="/project/{{id}}">
         <div class="comp" id="{{cohort_id}}">
-          <img class="projectImg" src="{{img_url}}">
-          <h4>{{name}}</h4>
+          {{!-- <img class="projectImg" src="{{img_url}}"> --}}
+          {{!-- <h4>{{name}}</h4> --}}
         </div>
         </a>
       {{/each}} 
   {{else}}
-     <h3>There are No Project in this Fac !</h3>
+     <h4 class="errMessage">There are No Community Projects in this Fac !</h4>
     </div>
   {{/if}}
 </section>
 <hr/>
 <section class="phase">
-  <h1>Client Phase Projects</h1>
-  <div class="proj">
-    <div class="comp">
-      <img class="projectImg" src="/img/startup-photos.jpg">
-      <h4>Project Name</h4>
+  <h1>Clients Phase Projects</h1>
+  {{#if clientsProjects.length}}
+    <div class="proj">
+      {{#each clientsProjects}}
+       <a href="/project/{{id}}">
+        <div class="comp" id="{{cohort_id}}">
+          <img class="projectImg" src="https://avatars1.githubusercontent.com/u/26024284?s=460&v=4">
+          <h4>{{name}}</h4>
+        </div>
+        </a>
+      {{/each}} 
+  {{else}}
+     <h4 class="errMessage">There are No Clients Projects in this Fac !</h4>
     </div>
-    <div class="comp">
-      <img class="projectImg" src="/img/startup-photos.jpg">
-      <h4>Project Name</h4>
-    </div>
-    <div class="comp">
-      <img class="projectImg" src="/img/startup-photos.jpg">
-      <h4>Project Name</h4>
-    </div>
-    <div class="comp">
-      <img class="projectImg" src="/img/startup-photos.jpg">
-      <h4>Project Name</h4>
-    </div>
-  </div>
+  {{/if}}
 </section>
 <hr>
 <section class="silderSection">
-  <section class="lazy slider ">
     {{#if res.studentResults.length}}
+  <section class="lazy slider ">
       {{#each res.studentResults}}
         <div class="sutdent">
           <a target="_blank" href="{{githublink}}">
@@ -66,7 +62,10 @@
           <h4>{{name}}</h4>
         </div>
       {{/each}} 
-    {{/if}}
+
   </section>
+      {{else}}
+           <h4 class="errMessage">There are No Students in this Fac !</h4>
+    {{/if}}
  </section>
 </section>

@@ -20,7 +20,7 @@ const router = express.Router();
 router.get('/', home.get);
 router.get('/cohort', cohortWebsite.get);
 router.get('/projects/:projectsType', projectsPage.get);
-router.get('/projects/id', projectPageWebsite.get);
+router.get('/project/:id', projectPageWebsite.get);
 router.get('/cohortPageWebsite/:id', cohortPageWebsite.get);
 
 router.get('/admin/login', login.get);
