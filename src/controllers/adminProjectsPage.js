@@ -25,6 +25,7 @@ exports.get = (request, response) => {
         layout: 'adminLayout',
         title: 'Admin Panel | Community Projects',
         projectsType,
+        project: 'active',
       });
     });
   } else {
@@ -66,6 +67,7 @@ exports.getProjects = (request, response) => {
           layout: 'adminLayout',
           title: `Admin Panel | ${projectsType} Projects`,
           projectsType,
+          project: 'active',
         });
       }
       return response.render('projectsPage', {
@@ -76,6 +78,7 @@ exports.getProjects = (request, response) => {
         layout: 'adminLayout',
         title: `Admin Panel | ${projectsType} Projects`,
         projectsType,
+        project: 'active',
       });
     });
   } else {

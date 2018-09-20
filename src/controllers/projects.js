@@ -26,6 +26,7 @@ exports.getProject = (request, response) => {
         styleFile: 'projects',
         jsFile: 'editProject',
         layout: 'adminLayout',
+        project: 'active',
         title: 'Admin Panel | Edit Projects',
       });
     }
@@ -35,6 +36,7 @@ exports.getProject = (request, response) => {
         styleFile: 'projects',
         jsFile: 'editProject',
         layout: 'adminLayout',
+        project: 'active',
         title: 'Admin Panel | Edit Projects',
       });
     }
@@ -43,6 +45,7 @@ exports.getProject = (request, response) => {
       styleFile: 'projects',
       jsFile: 'editProject',
       layout: 'adminLayout',
+      project: 'active',
       title: 'Admin Panel | Edit Projects',
     });
   });

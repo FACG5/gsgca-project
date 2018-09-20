@@ -1,12 +1,14 @@
 <section class="content">
-    <h1>STATISTICS</h1>
-    {{#if err}}
-      <h3>{{err}}</h3>
-    {{else}} 
-    <section class="static">
-        <h3 class="static">Number Of Cohorts :  {{countCohort}}</h3>
-        <h3 class="static">Number Of Projects : {{countProject}}</h3>
-        <h3 class="static">Number Of Students : {{countStudent}} </h3>
-    </section>
-    {{/if}}
+  <h1 class="homePageTitle">Control Panel Homepage</h1>
+  <br><br>
+  <h1>STATISTICS</h1>
+  {{#if err}}
+    <h3>{{err}}</h3>
+  {{else}} 
+  <section class="static">
+    <h3 class="static">Number Of Cohorts :  {{countCohort}}</h3>
+    <h3 class="static">Number Of Projects : {{countProject}}</h3>
+    <h3 class="static">Number Of Students : {{countStudent}} </h3>
+  </section>
+  {{/if}}
 </section>
