@@ -19,9 +19,9 @@ exports.getStatistics = (request, response) => {
       });
     }
     return response.render('adminHomePage', {
-      count_cohort: res[0].count_cohort,
-      count_project: res[0].count_project,
-      count_student: res[0].count_student,
+      countCohort: res[0].count_cohort,
+      countProject: res[0].count_project,
+      countStudent: res[0].count_student,
       layout: 'adminLayout',
       title: 'Admin Panel | Home Page',
     });
