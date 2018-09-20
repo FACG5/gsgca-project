@@ -3,15 +3,15 @@
 </section>
 <section class="info">
   {{#each res.cohortResults}}
-  <div class="facInfo">
-    <h1>{{name}}</h1>
-    <p>{{description}}</p>
-  </div>
-  <div class="github">
-    <button>
-      <a href="{{githublink}}">Github Page</a>
-    </button>
-  </div>
+    <div class="facInfo">
+      <h1>{{name}}</h1>
+      <p>{{description}}</p>
+    </div>
+    <div class="github">
+      <button>
+        <a href="{{githublink}}">Github Page</a>
+      </button>
+    </div>
   {{/each}}
 </section>
 <hr>
@@ -20,15 +20,15 @@
   {{#if communityProjects.length}}
     <div class="proj">
       {{#each communityProjects}}
-       <a href="/project/{{id}}">
-        <div class="comp" id="{{cohort_id}}">
-          {{!-- <img class="projectImg" src="{{img_url}}"> --}}
-          {{!-- <h4>{{name}}</h4> --}}
-        </div>
-        </a>
+        <a href="/project/{{id}}">
+          <div class="comp" id="{{cohort_id}}">
+            <img class="projectImg" src="{{img_url}}">
+            <h4>{{name}}</h4>
+          </div>
+          </a>
       {{/each}} 
   {{else}}
-     <h4 class="errMessage">There are No Community Projects in this Fac !</h4>
+    <h4 class="errMessage">There are No Community Projects in this Fac !</h4>
     </div>
   {{/if}}
 </section>
@@ -38,12 +38,12 @@
   {{#if clientsProjects.length}}
     <div class="proj">
       {{#each clientsProjects}}
-       <a href="/project/{{id}}">
-        <div class="comp" id="{{cohort_id}}">
-          <img class="projectImg" src="{{img_url}}">
-          <h4>{{name}}</h4>
-        </div>
-        </a>
+        <a href="/project/{{id}}">
+          <div class="comp" id="{{cohort_id}}">
+            <img class="projectImg" src="{{img_url}}">
+            <h4>{{name}}</h4>
+          </div>
+          </a>
       {{/each}} 
   {{else}}
      <h4 class="errMessage">There are No Clients Projects in this Fac !</h4>
@@ -52,20 +52,19 @@
 </section>
 <hr>
 <section class="silderSection">
-    {{#if res.studentResults.length}}
+  {{#if res.studentResults.length}}
   <section class="lazy slider ">
-      {{#each res.studentResults}}
+    {{#each res.studentResults}}
         <div class="sutdent">
           <a target="_blank" href="{{githublink}}">
             <img src="{{img_url}}">
           </a>
           <h4>{{name}}</h4>
         </div>
-      {{/each}} 
-
+    {{/each}} 
   </section>
-      {{else}}
-           <h4 class="errMessage">There are No Students in this Fac !</h4>
-    {{/if}}
- </section>
+  {{else}}
+    <h4 class="errMessage">There are No Students in this Fac !</h4>
+  {{/if}}
+  </section>
 </section>

@@ -14,20 +14,19 @@
 </section>
 <section class="client-project">
   {{#if err}}
-<h3>No Result</h3>
-{{else}}
-  {{#if projectResult.length}}
-
-{{#each projectResult}}
-  <div>
-    <a href="{{websitelink}}">
-      <img class="projectImg" src="{{img_url}}">
-    </a>
-    <h5>{{name}}</h5>
-  </div>
-  {{/each}}
+    <h3>{{err}}</h3>
   {{else}}
-  <h3 class="errMessage">No Community Projects !</h3>
-{{/if}}
-{{/if}}
+    {{#if projectResult.length}}
+      {{#each projectResult}}
+      <div>
+        <a href="/project/{{id}}">
+          <img class="projectImg" src="{{img_url}}">
+        </a>
+        <h5>{{name}}</h5>
+      </div>
+      {{/each}}
+    {{else}}
+      <h3 class="errMessage">No Community Projects !</h3>
+    {{/if}}
+  {{/if}}
 </section>

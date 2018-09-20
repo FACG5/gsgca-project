@@ -110,7 +110,6 @@ h4 {
   text-align: justify;
 
   overflow: hidden;
-  /* height: 150px; */
   font-weight: bold;
   font-size: 15px;
   font-family: Roboto;
@@ -126,7 +125,6 @@ h4 {
   margin:0 auto; 
    width: 80%;
   
-  
 }
 .client-project>div{
   text-align: center;
@@ -139,14 +137,11 @@ color: #757575;
 }
 .projectImg{
   border-radius: 5px;
-
-  max-width: 100%;
   height: 316.92px;
   width: 100%;
 }
 
 .information-ui{
-
   margin-left: 2rem;
   font-weight: bold;
   color: #757575;
