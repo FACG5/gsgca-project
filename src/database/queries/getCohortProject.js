@@ -2,16 +2,16 @@ const getCohortStudents = require('./getCohortStudents');
 const { getCohortdata } = require('./getCohort');
 const getProjects = require('./getProjects');
 
-const getCohortProejctQuery = (id, cb, next) => getProjects(id, (err, projectResults) => {
+const getCohortProejctQuery = (cohortId, cb) => getProjects(cohortId, (err, projectResults) => {  
   if (err) return cb(err.DETAIL);
-  return getCohortStudents(id, (error, studentResults) => {
+  return getCohortStudents(cohortId, (error, studentResults) => {
     if (error) return cb(err.DETAIL);
-    return getCohortdata(id)
+    return getCohortdata(cohortId)
       .then((cohortResults) => {
         cb(null, { projectResults, studentResults, cohortResults });
       })
       .catch((errors) => {
-        next(errors);
+        cb(errors);
       });
   });
 });
