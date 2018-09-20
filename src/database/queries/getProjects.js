@@ -1,8 +1,6 @@
 const dbConnection = require('../db_connection');
 
 const getProjects = (id, cb) => {
-  // console.log(id,55);
-  
   const sql = {
     text: 'select cohort.name AS cohortName, cohort.id as cohortId, project.* FROM cohort join project ON project.cohort_id = cohort.id where cohort.id = $1',
     values: [id],

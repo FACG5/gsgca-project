@@ -3,7 +3,7 @@ const getProjectByid = require('./getProjectByid');
 
 const getStudentProjectQuery = (id, cb) => {
   const sql = {
-    text: 'select student.githublink as github_link, cohort.name as cohort_name,project.id, student.name as student_name ,project.name as project_name ,project.description,project.githublink,project.websitelink from project JOIN std_project ON std_project.project_id = project.id JOIN student ON student.id = std_project.std_id join cohort ON cohort.id = project.cohort_id where project.id=$1',
+    text: 'select project.id as projectId, cohort.id as cohortId ,student.githublink as github_link, cohort.name as cohort_name,project.id, student.name as student_name ,project.name as project_name ,project.description,project.githublink,project.websitelink from project JOIN std_project ON std_project.project_id = project.id JOIN student ON student.id = std_project.std_id join cohort ON cohort.id = project.cohort_id where project.id=$1',
     values: [id],
   };
   dbConnection.query(sql, (err, projectStudentsResults) => {
