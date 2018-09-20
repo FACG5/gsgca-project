@@ -1,18 +1,18 @@
 <section class="sidebar">
   <ul>
-    <a href="/admin">
+    <a {{#if adminHomePage}} class='active' {{/if}} href="/admin">
       <li>
         <img class="icon" src="/img/web-page-home.png">
         <span class="menu">HOME</span>
       </li>
     </a>
-    <a href="/admin/cohorts">
+    <a {{#if cohort}} class='active' {{/if}} href="/admin/cohorts">
       <li>
         <img class="icon" src="/img/multiple-users-silhouette.png">
         <span class="menu">Cohorts</span>
       </li>
     </a>
-    <a>
+    <a {{#if project}} class='active' {{/if}}>
       <li onclick="subMenu()">
         <img class="icon" src="/img/website.png">
         <span class="menu">Projects</span>

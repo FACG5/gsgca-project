@@ -20,7 +20,7 @@ exports.delete = (request, response) => {
   deleteStudent(request.body, (err, res) => {
     if (err) return response.send(JSON.stringify({ err }));
     return response.send(
-      JSON.stringify({ err: null, message: 'Student Deleted !' })
+      JSON.stringify({ err: null, message: 'Student Deleted !' }),
     );
   });
 };
@@ -35,7 +35,7 @@ exports.put = (request, response) => {
   });
 };
 
-exports.editPage = (request, response) =>{
+exports.editPage = (request, response) => {
   const { id } = request.params;
   getStudentData(id)
     .then((results) => {
@@ -45,6 +45,7 @@ exports.editPage = (request, response) =>{
         jsFile: ['editStudent'],
         layout: 'adminLayout',
         results,
+        cohort: 'active',
       });
     })
     .catch((err) => {

@@ -7,7 +7,7 @@ exports.getCohortData = (req, response, next) => {
   getCohortdata(id)
     .then((results) => {
       response.render('editcohort', {
-        title: 'Cohort', styleFile: 'cohorts', jsFile: ['editCohort'], layout: 'adminLayout', results,
+        title: 'Cohort', styleFile: 'cohorts', cohort: 'active', jsFile: ['editCohort'], layout: 'adminLayout', results,
       });
     })
     .catch((err) => {

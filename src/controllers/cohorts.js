@@ -18,6 +18,7 @@ exports.get = (request, response) => {
     return response.render('cohort', {
       res,
       styleFile: 'cohorts',
+      cohort: 'active',
       jsFile,
       layout: 'adminLayout',
       title: 'Admin Panel | Cohorts',
@@ -33,6 +34,7 @@ exports.getStudents = (request, response) => {
         err: 'cannot get cohort Students !',
         styleFile: 'cohorts',
         jsFile,
+        cohort: 'active',
         layout: 'adminLayout',
         title: 'Admin Panel | Students',
       });
@@ -42,6 +44,7 @@ exports.getStudents = (request, response) => {
       return response.render('cohortStudents', {
         err: 'There are No Student in this Fac !',
         styleFile: 'cohorts',
+        cohort: 'active',
         jsFile: ['cohortStudent'],
         layout: 'adminLayout',
         title: 'Admin Panel | Students',
@@ -53,6 +56,7 @@ exports.getStudents = (request, response) => {
       cohortname: res[0].cohortname,
       styleFile: 'cohorts',
       jsFile: ['cohortStudent'],
+      cohort: 'active',
       layout: 'adminLayout',
       title: 'Admin Panel | Students',
     });
