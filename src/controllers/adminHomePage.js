@@ -11,6 +11,11 @@ exports.logout = (request, response) => {
 
 exports.getStatistics = (request, response) => {
   getStatistics((err, res) => {
+    const {
+      count_cohort: conutCohort, count_project: countProject,
+      count_student: countStudent,
+    } = res[0];
+
     if (err) {
       return response.render('adminHomePage', {
         adminHomePage: 'active',
@@ -21,9 +26,9 @@ exports.getStatistics = (request, response) => {
     }
     return response.render('adminHomePage', {
       adminHomePage: 'active',
-      countCohort: res[0].count_cohort,
-      countProject: res[0].count_project,
-      countStudent: res[0].count_student,
+      conutCohort,
+      countProject,
+      countStudent,
       layout: 'adminLayout',
       title: 'Admin Panel | Home Page',
     });
