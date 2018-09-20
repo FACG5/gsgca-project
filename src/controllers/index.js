@@ -28,7 +28,7 @@ router.get('/cohortPageWebsite/:id', cohortPageWebsite.get);
 router.get('/admin/login', login.get);
 router.post('/admin/login', login.post);
 
-router.get('/admin', authCheck, adminHomePage.get);
+router.get('/admin', authCheck, adminHomePage.getStatistics, adminHomePage.get);
 router.get('/admin/logout', authCheck, adminHomePage.logout);
 router.get('/admin/cohorts', authCheck, cohorts.get);
 router.post('/admin/cohorts', authCheck, cohorts.addCohort);

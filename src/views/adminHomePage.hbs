@@ -1,8 +1,12 @@
 <section class="content">
     <h1>STATISTICS</h1>
+    {{#if err}}
+      <h3>{{err}}</h3>
+    {{else}} 
     <section class="static">
-        <h3 class="static">Number Of Cohorts : 5</h3>
-        <h3 class="static">Number Of Projects : 50</h3>
-        <h3 class="static">Number Of Students : 25 </h3>
+        <h3 class="static">Number Of Cohorts :  {{count_cohort}}</h3>
+        <h3 class="static">Number Of Projects : {{count_project}}</h3>
+        <h3 class="static">Number Of Students : {{count_student}} </h3>
     </section>
+    {{/if}}
 </section>
