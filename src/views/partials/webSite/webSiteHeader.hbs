@@ -9,11 +9,11 @@
       <li {{#if cohortPage}} class='active' {{/if}}>
         <a href="/cohort" class="menu">Alumni</a>
       </li>
-      <li{{#if communityProjects}} class='active' {{/if}}>
-        <a href="/communityProjects" class="menu">Community Projects</a>
+      <li{{#if projectsType}}{{#compare projectsType "Community"}} class='active' {{/compare}}{{/if}}>
+        <a href="/projects/Community" class="menu">Community Projects</a>
       </li>
-      <li{{#if clientProjects}} class='active' {{/if}}>
-        <a href="/clientProjects" class="menu">Client Projects</a>
+      <li{{#if projectsType}}{{#compare projectsType 'Clients' }} class='active' {{/compare}}{{/if}}>
+        <a href="/projects/Clients" class="menu">Client Projects</a>
       </li>
     </ul>
   </nav>
