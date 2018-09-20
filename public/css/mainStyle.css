@@ -192,6 +192,10 @@ button{
   font-size: 1.8rem;
 }
 
+.wordCap {
+  text-transform: uppercase;
+}
+
 @media (max-width: 1024px) {
   .content {
     padding: 4rem 0rem 2rem 4rem;
