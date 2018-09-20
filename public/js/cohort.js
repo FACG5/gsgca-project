@@ -21,23 +21,23 @@ descriptions.addEventListener('focusout', (e) => {
   check(descriptions, deserror, 'Description Cohort is required');
 });
 githublinks.addEventListener('focusout', (e) => {
-  check(githublinks, giterror, 'Github Link Cohort is required');
+  urlCheck(githublinks, giterror, 'Github Link Cohort is required');
 });
 imgURls.addEventListener('focusout', (e) => {
-  check(imgURls, imgerror, 'Image Cohort is required');
+  urlCheck(imgURls, imgerror, 'Image Cohort is required');
 });
 
 addCohorts.addEventListener('click', (e) => {
   const checkname = check(names, nameerror, 'name Cohort is required');
   const checkDescription = check(descriptions, deserror, 'Description Cohort is required');
-  const checkgitLink = check(githublinks, giterror, 'Github Link Cohort is required');
-  const checkImg = check(imgURls, imgerror, 'Image Cohort is required');
+  const checkgitLink = urlCheck(githublinks, giterror, 'Github Link Cohort is required');
+  const checkImg = urlCheck(imgURls, imgerror, 'Image Cohort is required');
 
   if (checkname && checkDescription && checkgitLink && checkImg) {
     const name = names.value;
     const description = descriptions.value;
-    const githublink = githublinks.value;
-    const imgURl = imgURls.value;
+    const githublink = addhttps(githublinks.value);
+    const imgURl = addhttps(imgURls.value);
     const data = {
       name,
       description,

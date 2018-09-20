@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const favicon = require('serve-favicon');
 const controllers = require('./controllers');
+const helpers = require('./views/helpers/index');
 
 const app = express();
 app.use(bodyParser.json());
@@ -20,9 +21,9 @@ app.engine(
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'mainLayout',
+    helpers,
   }),
 );
-
 app.set('port', process.env.PORT || 7000);
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));

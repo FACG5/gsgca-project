@@ -5,12 +5,16 @@ const subMenu = () => {
   sub.classList.toggle('sub-menu--visible');
 };
 
-const deleteButtonFunction = (button, route, redirectLocation, dataOfDelete) => {
+const deleteButtonFunction = (
+  button,
+  route,
+  redirectLocation,
+  dataOfDelete,
+) => {
   button.addEventListener('click', (e) => {
     swal({
       title: 'Are you sure ?',
-      text:
-        'Once deleted, you will not be able to recover this!',
+      text: 'Once deleted, you will not be able to recover this!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
@@ -68,4 +72,22 @@ const check = (input, errorMessageElement, errMessage) => {
     displayErr(errorMessageElement, '');
     return true;
   }
+};
+const urlCheck = (input, errorMessageElement, errMessage) => {
+  const inputValue = input.value;
+  if (!inputValue) {
+    displayErr(errorMessageElement, errMessage);
+  } else if (inputValue.toLowerCase().match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g) === null) {
+    displayErr(errorMessageElement, 'Not Valid Url !');
+  } else {
+    displayErr(errorMessageElement, '');
+    return true;
+  }
+};
+const addhttps = (url) => {
+  let prefix = 'https://';
+  if (url.substr(0, prefix.length) !== prefix) {
+    url = prefix + url;
+  }
+  return url;
 };
