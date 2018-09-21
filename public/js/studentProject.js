@@ -2,11 +2,11 @@
 const addStd = document.getElementById('addStd');
 const addStudent = document.getElementById('addStudent');
 const selector = document.getElementById('selector');
-const URL = window.location.href;
-const splitUrl = URL.split('/');
+const Url = window.location.href;
+const splitUrl = Url.split('/');
 const cohortId = splitUrl[splitUrl.length - 1];
 const projectId = splitUrl[splitUrl.length - 4];
-const deleteStudentButton = document.querySelectorAll('.delete');
+const deleteStudentButtons = document.querySelectorAll('.delete');
 const projectType = splitUrl[splitUrl.length - 5];
 
 
@@ -17,12 +17,12 @@ if (projectType.toLowerCase() === 'clients') {
   projectTypeValue = 1;
 }
 
-const addStudents = () => {
+const toggleAddStudents = () => {
   addStd.classList.toggle('sectionAddstd--visible');
 };
 
-deleteStudentButton.forEach((button) => {
-  const deleteProjectData = { std_project: button.id };
+deleteStudentButtons.forEach((button) => {
+  const deleteProjectData = { studentProject: button.id };
   const route = `/admin/${projectType}/${projectId}/projects/student/${cohortId}`;
   const routeToRedirect = `/admin/${projectType}/${projectId}/projects/student/${cohortId}`;
   deleteButtonFunction(button, route, routeToRedirect, deleteProjectData);
@@ -30,9 +30,9 @@ deleteStudentButton.forEach((button) => {
 
 
 addStudent.addEventListener('click', () => {
-  const stdId = selector[selector.selectedIndex].value;
+  const studentId = selector[selector.selectedIndex].value;
   const data = {
-    stdId,
+    studentId,
     projectId,
   };
   fetch(`/admin/${projectType}/${projectId}/projects/student/${cohortId}`, {

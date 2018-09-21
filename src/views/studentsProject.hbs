@@ -1,6 +1,6 @@
 <section class="content">
   <section class="" id="student">
-    <button class="button button2 buttonstd" onclick="addStudents()">ADD Student</button>
+    <button class="button button2 buttonstd" onclick="toggleAddStudents()">ADD Student</button>
     {{#if res.projectStudentsResult.length}}
     <table class="tabel ">
       <tr>
@@ -11,7 +11,7 @@
       <tr>
         <td>{{student_name}}</td>
         <td>
-          <a class="delete" id={{std_id}}>
+          <a class="delete" id={{student_projectid}}>
             Delete </a>
         </td>
       </tr>
@@ -27,7 +27,7 @@
     <select class="styled" id="selector">
       <option disabled selected>Select Student</option>
       {{#each results}}
-        <option id='option' value="{{std_id}}">{{name}}</option>
+        <option id='option' value="{{student_id}}">{{name}}</option>
       {{/each}}
     </select>
     <input type="submit" value="ADD" id="addStudent">

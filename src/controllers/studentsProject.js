@@ -1,7 +1,7 @@
 const getStudentProjectQuery = require('../database/queries/getStudentProject');
 const getCohortStudentsQuery = require('../database/queries/getCohortStudents');
-const { deleteStdProjectQuery } = require('../database/queries/deleteStdProject');
-const { addStdProjectQuery } = require('../database/queries/addStdProject');
+const { deleteStdProjectQuery } = require('../database/queries/deleteStudentProject');
+const { addStdProjectQuery } = require('../database/queries/addStudentProject');
 
 exports.get = (request, response) => {
   const data = request.params;
@@ -56,7 +56,7 @@ exports.get = (request, response) => {
 
 exports.deleteStdProject = (req, response, next) => {
   const data = req.body;
-  deleteStdProjectQuery(data.std_project)
+  deleteStdProjectQuery(data.studentProject)
     .then((results) => {
       const result = { err: null, message: 'Student Deleted !' };
       response.send(JSON.stringify(result));
