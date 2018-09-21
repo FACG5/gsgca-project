@@ -11,7 +11,7 @@
       <tr>
         <td>{{student_name}}</td>
         <td>
-          <a class="delete" href="javascript:;">
+          <a class="delete" id={{std_id}}>
             Delete </a>
         </td>
       </tr>
@@ -24,13 +24,13 @@
   {{#if results.length}}
   <section class="sectionAddstd" id="addStd">
     <h2>Add Student</h2>
-    <select class="styled">
+    <select class="styled" id="selector">
       <option disabled selected>Select Student</option>
       {{#each results}}
-        <option>{{name}}</option>
+        <option id='option' value="{{std_id}}">{{name}}</option>
       {{/each}}
     </select>
-    <input type="submit" value="ADD">
+    <input type="submit" value="ADD" id="addStudent">
   </section>
   {{else}}
     <h3> No Students in this Cohort </h3>

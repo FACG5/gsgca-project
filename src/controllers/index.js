@@ -46,7 +46,9 @@ router.post('/admin/:projectsType/:cohortId/newProject', authCheck, projects.pos
 router.delete('/admin/:projectsType/:cohortId/deleteProject', authCheck, projects.delete);
 router.get('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.getProject);
 router.post('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.edit);
-router.get('/admin/Community/:id/projects/student/:cohortId', authCheck, studentsProject.get);
+router.get('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.get);
+router.delete('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.deleteStdProject);
+router.post('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.addStdProject);
 
 
 router.use(error.client);
