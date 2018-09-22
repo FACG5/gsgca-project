@@ -207,6 +207,7 @@ h5{
 
 .icons img {
   margin: 1%;
+  cursor: pointer;
 }
 
 .icons a:hover {
