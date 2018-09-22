@@ -70,8 +70,6 @@ exports.getProjects = (request, response) => {
           project: 'active',
         });
       }
-      console.log(projectResult);
-      
       return response.render('projectsPage', {
         projectResult,
         cohortname: res[0].cohortname,
