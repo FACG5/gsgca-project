@@ -34,7 +34,12 @@ exports.get = (request, response) => {
         }
         return response.render('studentsProject', {
           results,
-          res,
+          res
+          // : {
+          //   studentName: res.student_name,
+          //   studentProjectId: res.student_projectId,
+          // }
+          ,
           title: 'Admin Panel |  Student Project',
           styleFile: 'projects',
           jsFile: ['studentProject'],
@@ -54,7 +59,7 @@ exports.get = (request, response) => {
 };
 
 
-exports.deleteStdProject = (req, response, next) => {
+exports.deleteStudentProject = (req, response, next) => {
   const data = req.body;
   deleteStdProjectQuery(data.studentProject)
     .then((results) => {
@@ -66,7 +71,7 @@ exports.deleteStdProject = (req, response, next) => {
     });
 };
 
-exports.addStdProject = (req, response, next) => {
+exports.addStudentProject = (req, response, next) => {
   const data = req.body;
   addStdProjectQuery(data)
     .then((results) => {
