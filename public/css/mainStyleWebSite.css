@@ -229,6 +229,14 @@ h5{
   margin: 10px 0px 10px 30px;
 }
 
+.follow h4 {
+  text-transform: uppercase;
+}
+
+.contact h5 {
+  text-transform: uppercase;
+}
+
 @media (max-width: 1024px) {
   .topnav {
     grid-column: 1/3;
