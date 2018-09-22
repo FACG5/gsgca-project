@@ -29,7 +29,9 @@ editStudentButton[0].addEventListener('click', (e) => {
             if (result.err) {
               const { code } = result.err;
               const { detail } = result.err;
-              if (code === '23505') {return swal("Error", "username is Exist !", "error");}
+              if (code === '23505') {
+                return swal('Error', 'username is Exist !', 'error');
+              }
               return swal('Error', detail, 'error');
             }
             return swal(result.message, ' ', 'success').then((value) => {

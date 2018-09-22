@@ -6,7 +6,7 @@ const updateStudentQuery = (studentData, id, cb) => {
   } = studentData;
 
   const sql = {
-    text: 'UPDATE student SET name =$2, username = $3 , githublink = $4, imgurl = $5 WHERE id = $1',
+    text: 'UPDATE student SET name =$2, username = $3 , githublink = $4, img_url = $5 WHERE id = $1',
     values: [id, name, username, htmlUrl, avatarUrl],
   };
   dbConnection.query(sql, (err, result) => {
