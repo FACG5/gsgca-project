@@ -34,12 +34,7 @@ exports.get = (request, response) => {
         }
         return response.render('studentsProject', {
           results,
-          res
-          // : {
-          //   studentName: res.student_name,
-          //   studentProjectId: res.student_projectId,
-          // }
-          ,
+          res,
           title: 'Admin Panel |  Student Project',
           styleFile: 'projects',
           jsFile: ['studentProject'],
