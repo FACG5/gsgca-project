@@ -1,4 +1,4 @@
-const dbConnection = require('../db_connection');
+const dbConnection = require('../dbConnection');
 
 const getStatistics = (cb) => {
   const sql = {

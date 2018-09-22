@@ -1,0 +1,38 @@
+<section class="content">
+  <section class="" id="student">
+    <button class="button button2 buttonstd" onclick="toggleAddStudents()">ADD Student</button>
+    {{#if res.projectStudentsResult.length}}
+    <table class="tabel ">
+      <tr>
+        <th>Name</th>
+        <th>Delete</th>
+      </tr>
+      {{#each res.projectStudentsResult}}
+      <tr>
+        <td>{{studentName}}</td>
+        <td>
+          <a class="delete" id={{studentProjectId}}>
+            Delete </a>
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+    {{else}}
+      <h3> This Project Has No Student </h3>
+    {{/if}}
+  </section>
+  {{#if results.length}}
+  <section class="sectionAddstd" id="addStd">
+    <h2>Add Student</h2>
+    <select class="styled" id="selector">
+      <option disabled selected>Select Student</option>
+      {{#each results}}
+        <option id="{{studentId}}" value="{{studentId}}">{{name}}</option>
+      {{/each}}
+    </select>
+    <input type="submit" value="ADD" id="addStudent">
+  </section>
+  {{else}}
+    <h3> No Students in this Cohort </h3>
+  {{/if}}
+</section>

@@ -1,8 +1,8 @@
 const dbconnection = require('../dbConnection');
 
-const deleteCohort = id => new Promise((resolve, reject) => {
+const deleteStdProjectQuery = id => new Promise((resolve, reject) => {
   const sql = {
-    text: 'DELETE FROM cohort where id = $1  ',
+    text: 'DELETE FROM std_project where id=$1  ',
     values: [id],
   };
   dbconnection.query(sql, (err, res) => {
@@ -14,4 +14,4 @@ const deleteCohort = id => new Promise((resolve, reject) => {
   });
 });
 
-module.exports = { deleteCohort };
+module.exports = { deleteStdProjectQuery };

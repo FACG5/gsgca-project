@@ -1,4 +1,4 @@
-const dbconnection = require('../db_connection');
+const dbconnection = require('../dbConnection');
 
 const getCohortdata = id => new Promise((resolve, reject) => {
   const sql = {

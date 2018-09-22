@@ -14,6 +14,7 @@ const students = require('./students');
 const { authCheck } = require('./middleware');
 const adminProjectsPage = require('./adminProjectsPage');
 const projects = require('./projects');
+const studentsProject = require('./studentsProject');
 
 const router = express.Router();
 
@@ -45,6 +46,10 @@ router.post('/admin/:projectsType/:cohortId/newProject', authCheck, projects.pos
 router.delete('/admin/:projectsType/:cohortId/deleteProject', authCheck, projects.delete);
 router.get('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.getProject);
 router.post('/admin/:projectsType/:cohortId/edit/:projectId', authCheck, projects.edit);
+router.get('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.get);
+router.delete('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.deleteStudentProject);
+router.post('/admin/:projectsType/:id/projects/student/:cohortId', authCheck, studentsProject.addStudentProject);
+
 
 router.use(error.client);
 router.use(error.server);
