@@ -34,7 +34,7 @@ cohort_id INTEGER REFERENCES cohort(id)   ON DELETE CASCADE
 );
 
 CREATE TABLE std_project (
-id SERIAL UNIQUE,
+id SERIAL ,
 std_id INTEGER REFERENCES student(id)  ON DELETE CASCADE,
 project_id INTEGER REFERENCES project(id)   ON DELETE CASCADE,
 PRIMARY KEY (std_id,project_id)

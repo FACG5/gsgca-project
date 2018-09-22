@@ -13,6 +13,7 @@ exports.get = (request, response) => {
       } else if (projectsType.toLowerCase() === 'clients') {
         projectResult = res.filter(project => project.project_type === 0);
       }
+
       if (err) {
         return response.render('ProjectsPageWebStite', {
           err: 'cannot get the Projects !',

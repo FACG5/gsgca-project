@@ -70,11 +70,16 @@ exports.addStudentProject = (req, response, next) => {
   const data = req.body;
   addStdProjectQuery(data)
     .then((results) => {
-      const result = { err: null, message: 'Student Added !' };
+      const result = { errorMessage: null, message: 'Student Added !' };
       response.send(JSON.stringify(result));
     })
     .catch((error) => {
-      const err = ' This Student is Already Exists';
-      response.send(JSON.stringify(err));
+      const errorMessage = error.detail;
+      if (error.code === '23505') {
+        const result = { errorMessage: 'This Student is Already Exists' };
+        return response.send(JSON.stringify(result));
+      }
+      const result = { errorMessage };
+      return response.send(JSON.stringify(result));
     });
 };

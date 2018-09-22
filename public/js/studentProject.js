@@ -30,7 +30,7 @@ deleteStudentButtons.forEach((button) => {
 
 
 addStudent.addEventListener('click', () => {
-  const studentId = selector[selector.selectedIndex].value;
+  const studentId = selector[selector.selectedIndex].value;  
   const data = {
     studentId,
     projectId,
@@ -43,10 +43,11 @@ addStudent.addEventListener('click', () => {
   })
     .then(result => result.json())
     .then((response) => {
+      if(response.errorMessage) return swal('Error !', response.errorMessage, 'error');
       swal('Good job!', response.message, 'success').then((value) => {
         window.location = `/admin/${projectType}/${projectId}/projects/student/${cohortId}`;
         JSON.stringify(response);
       });
     })
-    .catch(error =>  swal('Error',' This Student is Already Exists', 'error') );
+    .catch(error =>  swal('Error while adding student !', error.errorMessage, 'error'));
 });

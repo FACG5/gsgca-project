@@ -9,9 +9,9 @@
       </tr>
       {{#each res.projectStudentsResult}}
       <tr>
-        <td>{{student_name}}</td>
+        <td>{{studentName}}</td>
         <td>
-          <a class="delete" id={{student_projectid}}>
+          <a class="delete" id={{studentProjectId}}>
             Delete </a>
         </td>
       </tr>
@@ -27,7 +27,7 @@
     <select class="styled" id="selector">
       <option disabled selected>Select Student</option>
       {{#each results}}
-        <option id='option' value="{{student_Id}}">{{name}}</option>
+        <option id="{{studentId}}" value="{{studentId}}">{{name}}</option>
       {{/each}}
     </select>
     <input type="submit" value="ADD" id="addStudent">
