@@ -205,8 +205,12 @@ h5{
   padding-right: 0.5rem;
 }
 
-.icons img{
+.icons img {
   margin: 1%;
+}
+
+.icons a:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contactInformation {
