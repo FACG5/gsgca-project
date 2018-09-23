@@ -3,12 +3,12 @@ DROP TABLE IF EXISTS admin,cohort,student,project,std_project CASCADE;
 
 CREATE TABLE admin (
 id SERIAL PRIMARY KEY,
-username VARCHAR(20) NOT NULL,
+username VARCHAR NOT NULL,
 password VARCHAR(150) NOT NULL
 );
 CREATE TABLE cohort (
 id SERIAL PRIMARY KEY,
-name VARCHAR(20),
+name VARCHAR,
 description TEXT,
 githublink VARCHAR(200),
 img_url VARCHAR(1500)
@@ -24,7 +24,7 @@ cohort_id INTEGER REFERENCES cohort(id)   ON DELETE CASCADE
 
 CREATE TABLE project (
 id SERIAL PRIMARY KEY,
-name VARCHAR(50),
+name VARCHAR,
 description TEXT,
 githublink VARCHAR(200),
 websitelink VARCHAR(200),

@@ -7,6 +7,15 @@ const jsFile = ['cohort'];
 
 exports.get = (request, response) => {
   getCohortsQuery((err, res) => {
+    const mappedResults = res.map((
+      {
+        id, name, description, githublink, img_url,
+      },
+    ) => (
+      {
+        id, name, description, githubLink: githublink, imgUrl: img_url,
+      }
+    ));
     if (err) {
       return response.render('cohort', {
         err: 'cannot get the cohorts !',
@@ -16,7 +25,7 @@ exports.get = (request, response) => {
       });
     }
     return response.render('cohort', {
-      res,
+      mappedResults,
       styleFile: 'cohorts',
       cohort: 'active',
       jsFile,
@@ -29,6 +38,20 @@ exports.get = (request, response) => {
 exports.getStudents = (request, response) => {
   const { cohortId } = request.params;
   getCohortStudentsQuery(cohortId, (err, res) => {
+    const cohortStudentResult = res.map((
+      {
+        name, studentId, username, cohort_id, cohortname, githublink, img_url,
+      },
+    ) => ({
+      name,
+      studentId,
+      userName: username,
+      cohortId: cohort_id,
+      cohortName: cohortname,
+      githubLink: githublink,
+      imgUrl: img_url,
+    }));
+
     if (err) {
       return response.render('cohortStudents', {
         err: 'cannot get cohort Students !',
@@ -52,8 +75,8 @@ exports.getStudents = (request, response) => {
     }
 
     return response.render('cohortStudents', {
-      res,
-      cohortname: res[0].cohortname,
+      cohortStudentResult,
+      cohortName: cohortStudentResult[0].cohortName,
       styleFile: 'cohorts',
       jsFile: ['cohortStudent'],
       cohort: 'active',

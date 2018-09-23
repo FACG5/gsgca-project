@@ -11,9 +11,9 @@ exports.get = (request, response) => {
         jsFile: 'cohortPageWebsite',
       });
     }
-    if (res.cohortResults.length === 0) {
+    if (!res || res.cohortResults.length === 0) {
       return response.status(404).render('error', {
-        errorMessage: 'Project Not Found !',
+        errorMessage: 'Page Not Found !',
         layout: 'error',
         style: 'error',
         statusCode: 404,
