@@ -53,6 +53,14 @@ exports.getProjects = (request, response) => {
           title: 'Admin Panel | Community Projects',
         });
       }
+      if (res.length === 0) {
+        return response.status(404).render('error', {
+          errorMessage: 'Project Not Found !',
+          layout: 'error',
+          style: 'error',
+          statusCode: 404,
+        });
+      }
       let projectResult = '';
       if (projectsType.toLowerCase() === 'community') {
         projectResult = res.filter(project => project.project_type === 1);
