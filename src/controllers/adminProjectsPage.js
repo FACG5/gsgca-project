@@ -45,17 +45,8 @@ exports.getProjects = (request, response) => {
   ) {
     getProjectsQuery(cohortId, (err, res) => {
       if (err) {
-        return response.render('communityProjects', {
-          err: 'cannot get Projects !',
-          styleFile: 'projects',
-          jsFile: 'projects',
-          layout: 'adminLayout',
-          title: 'Admin Panel | Community Projects',
-        });
-      }
-      if (res.length === 0) {
         return response.status(404).render('error', {
-          errorMessage: 'Project Not Found !',
+          errorMessage: 'Page Not Found !',
           layout: 'error',
           style: 'error',
           statusCode: 404,
