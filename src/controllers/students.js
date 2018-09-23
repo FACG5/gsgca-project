@@ -5,8 +5,6 @@ const getStudentData = require('../database/queries/getStudent');
 
 exports.post = (request, response) => {
   addStudent(request.body, (err, res) => {
-    console.log(err);
-    
     if (err) return response.send(JSON.stringify({ err }));
     const nameOfStudent = res[0].name;
     return response.send(
