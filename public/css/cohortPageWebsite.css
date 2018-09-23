@@ -76,7 +76,7 @@ h5 {
   margin-top: 3rem;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
 }
 
@@ -143,7 +143,7 @@ h5 {
   margin-top: 0.2rem;
   width: 100%;
   border-radius: 5px;
-  height: 279.8px;
+  height: 250px;
 }
 
 .comp {

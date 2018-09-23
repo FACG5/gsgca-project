@@ -2,14 +2,12 @@
   <img class="imageClient" src="/img/besart-bootcamp.jpg">
 </section>
 <section class="section-2">
-  <h1 class="textmain">{{projectResult.name}}
-  </h1>
+  <h1 class="textmain">{{projectResult.name}}</h1>
   <p class="description">{{projectResult.description}}</p>
   <hr>
 </section>
 <section class="section-2">
-  <h1 class="textmain">Project Information
-  </h1>
+  <h1 class="textmain">Project Information</h1>
   <ul class="information-ui">
     <li>{{projectResult.cohortName}}</li>
     <li><a target="_blank" href="{{projectResult.githubLink}}">Github Link</a></li>
@@ -19,7 +17,7 @@
       <ul class="sutdentsUl">
         {{#if res.projectStudentsResult.length}}
           {{#each res.projectStudentsResult}}
-           <li><a target="_blank" href="{{githubLink}}"> {{studentName}}</a></li>
+             <li><a target="_blank" href="{{githubLink}}"> {{studentName}}</a></li>
           {{/each}}
         {{else}}
           <h3>There are No Student !</h3>
