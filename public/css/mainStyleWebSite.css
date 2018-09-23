@@ -205,8 +205,13 @@ h5{
   padding-right: 0.5rem;
 }
 
-.icons img{
-  margin: 1%;
+.icons img {
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.icons a:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contactInformation {
@@ -223,6 +228,14 @@ h5{
 }
 .follow,.contact{
   margin: 10px 0px 10px 30px;
+}
+
+.follow h4 {
+  text-transform: uppercase;
+}
+
+.contact h5 {
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {

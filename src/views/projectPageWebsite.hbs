@@ -2,24 +2,21 @@
   <img class="imageClient" src="/img/besart-bootcamp.jpg">
 </section>
 <section class="section-2">
-  <h1 class="textmain">{{res.projectResult.0.name}}
-  </h1>
-  <p class="description">{{res.projectResult.0.description}}</p>
+  <h1 class="textmain">{{projectResult.name}}</h1>
+  <p class="description">{{projectResult.description}}</p>
   <hr>
 </section>
 <section class="section-2">
-  <h1 class="textmain">Project Information
-  </h1>
+  <h1 class="textmain">Project Information</h1>
   <ul class="information-ui">
-    <li> {{res.projectResult.0.cohort_name}} </li>
-    <li><a target="_blank" href="{{res.projectResult.0.githublink}}">{{res.projectResult.0.githublink}}</a> </li>
-    <li><a target="_blank" href="{{res.projectResult.0.websitelink}}">{{res.projectResult.0.websitelink}}</a> </li>
-    <li>
-      students
+    <li>{{projectResult.cohortName}}</li>
+    <li><a target="_blank" href="{{projectResult.githubLink}}">Github Link</a></li>
+    <li><a target="_blank" href="{{projectResult.websiteLink}}">Website Link</a> </li>
+    <li> students
       <ul class="sutdentsUl">
         {{#if res.projectStudentsResult.length}}
           {{#each res.projectStudentsResult}}
-           <li><a target="_blank" href="{{github_link}}"> {{studentName}}</a></li>
+            <li><a target="_blank" href="{{githubLink}}"> {{studentName}}</a></li>
           {{/each}}
         {{else}}
           <h3>There are No Student !</h3>
@@ -27,4 +24,4 @@
       </ul>
     </li>
   </ul>
- </section>
+</section>

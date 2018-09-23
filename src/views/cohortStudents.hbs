@@ -5,7 +5,7 @@
     {{#if err}}
       <h3>{{err}}</h3>
     {{else}}
-    <h3>Students of {{cohortname}}</h3>
+    <h3>Students of {{cohortName}}</h3>
     <table class="tabel">
       <tr>
         <th>Name</th>
@@ -15,14 +15,14 @@
         <th>Edit</th>
         <th>Delete</th>
       </tr>
-      {{#each res}}
+      {{#each cohortStudentResult}}
       <tr>
         <td>{{name}}</td>
-        <td>{{username}}</td>
-        <td><a href="{{githublink}}">Click</a></td>
-        <td><a href="{{img_url}}">Click</a></td>
+        <td>{{userName}}</td>
+        <td><a href="{{githubLink}}" target="_blank">Click</a></td>
+        <td><a href="{{imgUrl}}" target="_blank">Click</a></td>
         <td>
-          <a class="edit" href = "/admin/cohorts/{{cohort_id}}/editStudent/{{studentId}}"id="{{studentId}}">Edit</a>
+          <a class="edit" href = "/admin/cohorts/{{cohortId}}/editStudent/{{studentId}}"id="{{studentId}}">Edit</a>
         </td>
         <td>
           <a class="delete" id="{{studentId}}">Delete</a>

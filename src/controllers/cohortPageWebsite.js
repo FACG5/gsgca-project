@@ -12,7 +12,7 @@ exports.get = (request, response) => {
       });
     }
     const communityProjects = res.projectResults.filter(project => project.project_type === 1);
-    const clientsProjects = res.projectResults.filter(project => project.project_type === 0);    
+    const clientsProjects = res.projectResults.filter(project => project.project_type === 0);
     return response.render('cohortPageWebsite', {
       res,
       communityProjects,
@@ -20,7 +20,7 @@ exports.get = (request, response) => {
       layout: 'webSite',
       styleFile: 'cohortPageWebsite',
       jsFile: 'cohortPageWebsite',
-      title: 'Code Academy | Cohort Name',
+      title: `Code Academy | ${res.cohortResults[0].name}`,
     });
   });
 };
