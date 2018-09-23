@@ -7,6 +7,15 @@ const jsFile = ['cohort'];
 
 exports.get = (request, response) => {
   getCohortsQuery((err, res) => {
+    const mappedResults = res.map((
+      {
+        id, name, description, githublink, img_url,
+      },
+    ) => (
+      {
+        id, name, description, githubLink: githublink, imgUrl: img_url,
+      }
+    ));
     if (err) {
       return response.render('cohort', {
         err: 'cannot get the cohorts !',
@@ -16,7 +25,7 @@ exports.get = (request, response) => {
       });
     }
     return response.render('cohort', {
-      res,
+      mappedResults,
       styleFile: 'cohorts',
       cohort: 'active',
       jsFile,
