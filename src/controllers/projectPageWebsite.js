@@ -11,6 +11,14 @@ exports.get = (request, response) => {
         jsFile: 'cohortPageWebsite',
       });
     }
+    if (res.projectResult.length === 0) {
+      return response.status(404).render('error', {
+        errorMessage: 'Project Not Found !',
+        layout: 'error',
+        style: 'error',
+        statusCode: 404,
+      });
+    }
     return response.render('projectPageWebsite', {
       res,
       title: `Code Acadmy | ${res.projectResult[0].name}`,

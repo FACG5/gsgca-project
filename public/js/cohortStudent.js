@@ -31,6 +31,8 @@ addStudentButton.addEventListener('click', (e) => {
               const { code } = result.err;
               const { detail } = result.err;
               if (code === '23505') return swal('Error', 'username is Exist !', 'error');
+              // if (code === '22001') return swal('Error', 'Long data !', 'error');
+
               return swal('Error', detail, 'error');
             }
             return swal(result.message, ' ', 'success').then((value) => {

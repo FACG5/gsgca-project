@@ -11,6 +11,14 @@ exports.get = (request, response) => {
         jsFile: 'cohortPageWebsite',
       });
     }
+    if (res.cohortResults.length === 0) {
+      return response.status(404).render('error', {
+        errorMessage: 'Project Not Found !',
+        layout: 'error',
+        style: 'error',
+        statusCode: 404,
+      });
+    }
     const communityProjects = res.projectResults.filter(project => project.project_type === 1);
     const clientsProjects = res.projectResults.filter(project => project.project_type === 0);
     return response.render('cohortPageWebsite', {

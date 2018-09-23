@@ -15,7 +15,7 @@ img_url VARCHAR(1500)
 );
 CREATE TABLE student (
 id SERIAL PRIMARY KEY,
-name VARCHAR(20),
+name VARCHAR,
 username VARCHAR(20),
 githublink VARCHAR(200),
 img_url VARCHAR(1500),
