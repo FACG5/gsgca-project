@@ -32,6 +32,14 @@ exports.get = (request, response) => {
             error: 'No Student of Project',
           });
         }
+        if (!results || results.length === 0) {
+          return response.status(404).render('error', {
+            errorMessage: 'Project Not Found !',
+            layout: 'error',
+            style: 'error',
+            statusCode: 404,
+          });
+        }
         return response.render('studentsProject', {
           results,
           res,

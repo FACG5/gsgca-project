@@ -25,7 +25,7 @@ exports.delete = (request, response) => {
   });
 };
 
-exports.put = (request, response) => {  
+exports.put = (request, response) => {
   const { id } = request.params;
   updateStudent(request.body, id, (err, result) => {
     if (err) return response.send(JSON.stringify({ err }));
