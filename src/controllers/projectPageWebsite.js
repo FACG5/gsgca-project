@@ -22,6 +22,7 @@ exports.get = (request, response) => {
     return response.render('projectPageWebsite', {
       res,
       projectResult,
+      title: `Code Acadmy | ${res.projectResult[0].name}`,
       layout: 'webSite',
       styleFile: 'projectWebsite',
       jsFile: 'cohortPageWebsite',
