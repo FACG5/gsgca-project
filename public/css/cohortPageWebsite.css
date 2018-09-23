@@ -108,7 +108,7 @@ h5 {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 10px;
-  width: 90%;
+  width: 80%;
   margin: 3rem auto;
 }
 
